@@ -1,0 +1,137 @@
+---
+caminho: /fazenda-digital/indicadores/
+prioridade: 0.6
+titulo: Quais números mandam na sua fazenda de leite? | Fazenda Digital
+descricao: Diagnóstico Fazenda Digital em 3 minutos: 12 indicadores, 1 toque cada, cerca de 3 minutos. Respostas enviadas pelo WhatsApp.
+wa_topo: Olá! Vim pela página de indicadores do Fazenda Digital.
+sem_flutuante: sim
+classe_body: com-barra
+js: /assets/js/indicadores.js
+---
+<section class="hero hero-interna" style="padding:56px 0 60px">
+  <div class="wrap" style="grid-template-columns:1fr">
+    <div style="max-width:720px">
+      <span class="selo"><i></i>Fazenda Digital · diagnóstico em 3 minutos</span>
+      <h1>Quais números mandam na sua <em>fazenda de leite</em>?</h1>
+      <p class="lead">São 12 itens, 1 toque cada, cerca de 3 minutos. Marque se o indicador é essencial, útil ou se vocês não usam. Com as suas respostas, mostramos pelo WhatsApp como o agente acompanharia esses números na sua rotina.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao-sm">
+  <div class="wrap">
+    <div class="form-ind">
+      <div class="quem-resp">
+        <input type="text" id="p-nome" placeholder="Seu nome" aria-label="Seu nome" autocomplete="name">
+        <input type="text" id="p-emp" placeholder="Fazenda / propriedade" aria-label="Fazenda / propriedade">
+      </div>
+      <div id="blocos"></div>
+      <div class="campo">
+        <label class="rot" for="p-falta">Faltou algum indicador importante? <small>(opcional)</small></label>
+        <input type="text" id="p-falta" placeholder="Ex.: custo da ração por vaca em lactação">
+      </div>
+      <div class="campo">
+        <span class="rot">Toparia testar na sua fazenda por 30 dias?</span>
+        <div class="chips" id="p-teste"></div>
+      </div>
+      <p class="rodape-form">As respostas não ficam guardadas em nenhum servidor: elas vão como mensagem de WhatsApp. Se o WhatsApp não abrir, toque em <button class="copiar" type="button" id="copiar">copiar respostas</button> e envie para {{cfg:whatsapp_legivel}}.</p>
+    </div>
+  </div>
+</section>
+
+<div class="barra-envio" role="region" aria-label="Enviar respostas">
+  <div class="in">
+    <div class="prog"><span id="progtxt">0 de 12 marcados</span><div class="trilho"><div class="preench" id="preench"></div></div></div>
+    <a class="btn btn-escuro" id="wa-envio" href="#" target="_blank" rel="noopener" aria-disabled="true">{{wa_svg}}Enviar pelo WhatsApp</a>
+  </div>
+</div>
+
+<script type="application/json" id="cfg-indicadores">
+{
+ "titulo": "Fazenda Digital · indicadores",
+ "chave": "fazenda-validacao-3min",
+ "whatsapp": "{{cfg:whatsapp}}",
+ "blocos": [
+  {
+   "nome": "Produção",
+   "itens": [
+    {
+     "id": 1,
+     "n": "Volume entregue no dia e no mês",
+     "d": "litros por entrega e acumulado"
+    },
+    {
+     "id": 2,
+     "n": "Custo por litro do mês",
+     "d": "comparado ao orçado"
+    },
+    {
+     "id": 3,
+     "n": "Margem por litro",
+     "d": "preço recebido menos custo"
+    }
+   ]
+  },
+  {
+   "nome": "Financeiro",
+   "itens": [
+    {
+     "id": 4,
+     "n": "Contas a vencer nos próximos 7 dias",
+     "d": "valor, fornecedor e data"
+    },
+    {
+     "id": 5,
+     "n": "Despesas do mês por categoria",
+     "d": "alimentação, sanidade, mão de obra…"
+    },
+    {
+     "id": 6,
+     "n": "Receita do leite no mês",
+     "d": "o que o laticínio pagou"
+    }
+   ]
+  },
+  {
+   "nome": "Liquidação do laticínio",
+   "itens": [
+    {
+     "id": 7,
+     "n": "Conferência do extrato de liquidação",
+     "d": "preço, bonificações e descontos × o combinado"
+    },
+    {
+     "id": 8,
+     "n": "Valor a recuperar nas divergências",
+     "d": "R$ apontado item a item"
+    },
+    {
+     "id": 9,
+     "n": "Histórico do preço por litro",
+     "d": "mês a mês, com bonificações"
+    }
+   ]
+  },
+  {
+   "nome": "Rotina e avisos",
+   "itens": [
+    {
+     "id": 10,
+     "n": "Resumo diário às 6h no WhatsApp",
+     "d": "volume, custo e contas do dia"
+    },
+    {
+     "id": 11,
+     "n": "Alerta de conta chegando ao vencimento",
+     "d": "aviso antes de vencer"
+    },
+    {
+     "id": 12,
+     "n": "Alerta de custo acima do orçado",
+     "d": "quando o custo/litro estoura a meta"
+    }
+   ]
+  }
+ ]
+}
+</script>

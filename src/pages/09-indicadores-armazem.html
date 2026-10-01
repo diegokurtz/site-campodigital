@@ -1,0 +1,137 @@
+---
+caminho: /armazem-digital/indicadores/
+prioridade: 0.6
+titulo: Quais números mandam no seu armazém? | Armazém Digital
+descricao: Diagnóstico Armazém Digital em 3 minutos: 12 indicadores, 1 toque cada, cerca de 3 minutos. Respostas enviadas pelo WhatsApp.
+wa_topo: Olá! Vim pela página de indicadores do Armazém Digital.
+sem_flutuante: sim
+classe_body: com-barra
+js: /assets/js/indicadores.js
+---
+<section class="hero hero-interna" style="padding:56px 0 60px">
+  <div class="wrap" style="grid-template-columns:1fr">
+    <div style="max-width:720px">
+      <span class="selo"><i></i>Armazém Digital · diagnóstico em 3 minutos</span>
+      <h1>Quais números mandam no seu <em>armazém</em>?</h1>
+      <p class="lead">São 12 itens, 1 toque cada, cerca de 3 minutos. Marque se o indicador é essencial, útil ou se vocês não usam. Com as suas respostas, mostramos pelo WhatsApp como o agente acompanharia esses números na sua rotina.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao-sm">
+  <div class="wrap">
+    <div class="form-ind">
+      <div class="quem-resp">
+        <input type="text" id="p-nome" placeholder="Seu nome" aria-label="Seu nome" autocomplete="name">
+        <input type="text" id="p-emp" placeholder="Empresa / unidade" aria-label="Empresa / unidade">
+      </div>
+      <div id="blocos"></div>
+      <div class="campo">
+        <label class="rot" for="p-falta">Faltou algum indicador importante? <small>(opcional)</small></label>
+        <input type="text" id="p-falta" placeholder="Ex.: consumo de energia por tonelada">
+      </div>
+      <div class="campo">
+        <span class="rot">Toparia testar na sua unidade por 30 dias?</span>
+        <div class="chips" id="p-teste"></div>
+      </div>
+      <p class="rodape-form">As respostas não ficam guardadas em nenhum servidor: elas vão como mensagem de WhatsApp. Se o WhatsApp não abrir, toque em <button class="copiar" type="button" id="copiar">copiar respostas</button> e envie para {{cfg:whatsapp_legivel}}.</p>
+    </div>
+  </div>
+</section>
+
+<div class="barra-envio" role="region" aria-label="Enviar respostas">
+  <div class="in">
+    <div class="prog"><span id="progtxt">0 de 12 marcados</span><div class="trilho"><div class="preench" id="preench"></div></div></div>
+    <a class="btn btn-escuro" id="wa-envio" href="#" target="_blank" rel="noopener" aria-disabled="true">{{wa_svg}}Enviar pelo WhatsApp</a>
+  </div>
+</div>
+
+<script type="application/json" id="cfg-indicadores">
+{
+ "titulo": "Armazém Digital · indicadores",
+ "chave": "armazem-validacao-3min",
+ "whatsapp": "{{cfg:whatsapp}}",
+ "blocos": [
+  {
+   "nome": "Recebimento",
+   "itens": [
+    {
+     "id": 1,
+     "n": "Recebido no dia e na safra",
+     "d": "toneladas e nº de cargas"
+    },
+    {
+     "id": 2,
+     "n": "Classificação e descontos por carga",
+     "d": "umidade, impureza, avariados"
+    },
+    {
+     "id": 3,
+     "n": "Fila e tempo de descarga",
+     "d": "horas do caminhão no pátio"
+    }
+   ]
+  },
+  {
+   "nome": "Secagem",
+   "itens": [
+    {
+     "id": 4,
+     "n": "Umidade de entrada e saída",
+     "d": "por secador, com alvo"
+    },
+    {
+     "id": 5,
+     "n": "Custo de secagem por tonelada",
+     "d": "lenha/combustível e R$/t"
+    }
+   ]
+  },
+  {
+   "nome": "Conservação",
+   "itens": [
+    {
+     "id": 6,
+     "n": "Temperatura dos silos",
+     "d": "aviso quando um ponto aquece"
+    },
+    {
+     "id": 7,
+     "n": "Aeração",
+     "d": "horas ligadas por silo"
+    },
+    {
+     "id": 8,
+     "n": "Quebra técnica",
+     "d": "estoque contábil × físico"
+    },
+    {
+     "id": 9,
+     "n": "Pragas e expurgo",
+     "d": "monitoramento e datas"
+    }
+   ]
+  },
+  {
+   "nome": "Estoque e gestão",
+   "itens": [
+    {
+     "id": 10,
+     "n": "Saldo e ocupação por silo",
+     "d": "t e % da capacidade"
+    },
+    {
+     "id": 11,
+     "n": "Valor do estoque na cotação do dia",
+     "d": "estoque × preço da saca"
+    },
+    {
+     "id": 12,
+     "n": "Registros, calibração e manutenção",
+     "d": "prontos para auditoria"
+    }
+   ]
+  }
+ ]
+}
+</script>

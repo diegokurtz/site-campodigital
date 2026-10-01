@@ -1,0 +1,118 @@
+---
+caminho: /armazem-digital/
+nav: armazem
+prioridade: 0.9
+titulo: Armazém Digital | Agente para armazéns de grãos pelo WhatsApp | Campo Digital
+descricao: Secador, silo e estoque respondendo pelo WhatsApp. Leituras por áudio, alerta de temperatura, saldo por silo, cotação diária de milho e soja e valor do estoque.
+wa_topo: Olá! Vim pelo site e quero conhecer o Armazém Digital (grãos).
+---
+<section class="hero hero-interna">
+  <div class="wrap">
+    <div>
+      <div class="marca-produto"><img src="/assets/img/simbolo.svg" alt=""><span>Armazém<b>Digital</b><small>by Campo Digital</small></span></div>
+      <span class="selo"><i></i>Piloto aberto para novos armazéns</span>
+      <h1>Secador, silo e estoque <em>respondendo pelo WhatsApp</em>.</h1>
+      <p class="lead">O operador fala a leitura, o agente registra. A temperatura subiu, o agente avisa. O gerente pergunta o saldo, o agente responde, já com o valor do estoque na cotação do dia.</p>
+      <div class="acoes">
+        <a class="btn btn-wa" href="{{wa:Olá! Tenho armazém de grãos e quero participar do piloto do Armazém Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Quero ser piloto</a>
+        <a class="btn btn-linha" href="#o-que-faz">O que o agente faz</a>
+      </div>
+    </div>
+    <div class="celular" aria-label="Exemplo de conversa com o agente Armazém Digital">
+      <div class="tela">
+        <div class="wa-topo"><span class="avatar"><img src="/assets/img/simbolo.svg" alt=""></span><div><b>Agente Armazém Digital</b><small>online</small></div></div>
+        <div class="conversa">
+          <div class="balao meu"><div class="audio"><span class="play"></span><span class="onda"></span><small>0:09</small></div><div class="transc">"Secador 2, umidade de saída 13,8, massa a 41 graus"</div><span class="hora">14:05</span></div>
+          <div class="balao dele">Anotado: <b>Secador 2</b><br>Umidade de saída: <b>13,8%</b> (dentro da faixa)<br>Temperatura da massa: <b>41 °C</b><span class="hora">14:05</span></div>
+          <div class="balao dele"><span class="alerta-tag">Aviso</span><br><b>Silo 3</b>: termometria registrou <b>31 °C</b>, acima do limite de 30 °C. Vale conferir a aeração.<span class="hora">16:40</span></div>
+          <div class="balao meu">quanto tem de soja no silo 4?<span class="hora">17:02</span></div>
+          <div class="balao dele"><b>Silo 4: 4.850 t de soja.</b><br>Na cotação de hoje, cerca de <b>R$ 10,5 milhões</b>.<span class="hora">17:02</span></div>
+        </div>
+      </div>
+      <p class="ilustrativo" style="color:#A9BBA6">Conversa ilustrativa, com dados fictícios.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao" id="o-que-faz">
+  <div class="wrap">
+    <div class="cab revela">
+      <span class="sobretitulo">O que o agente faz no armazém</span>
+      <h2>A rotina de pátio, secagem e armazenagem registrada na hora</h2>
+      <p class="lead">Quem está no secador ou em cima do silo não tem mão livre para planilha. Tem um celular e voz. É o suficiente.</p>
+    </div>
+    <div class="grade g3">
+      <div class="cartao revela"><div class="icone">{{icone:mic}}</div><h3>Leitura do secador por áudio</h3><p>Umidade de entrada e saída, temperatura da massa. Falou, ficou registrado com data, hora e responsável.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:termometro}}</div><h3>Termometria com alerta</h3><p>Leituras dos cabos registradas por silo. Passou do limite configurado, o aviso vai para quem precisa agir.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:relogio}}</div><h3>Ronda que não foi feita</h3><p>Se um silo fica tempo demais sem leitura, o agente cobra. A conferência deixa de depender da memória de alguém.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:vento}}</div><h3>Aeração registrada</h3><p>Liga e desliga dos ventiladores anotados por silo, para saber o que foi feito e quando.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:silo}}</div><h3>Saldo por silo</h3><p>Entradas e saídas informadas pela equipe viram saldo atualizado por estrutura e por produto.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:cotacao}}</div><h3>Cotação e valor do estoque</h3><p>Cotação diária de milho e soja pelos indicadores CEPEA/ESALQ e o valor do que está guardado, recalculado todo dia.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="secao escura">
+  <div class="wrap faixa-projetos">
+    <div class="revela">
+      <span class="sobretitulo">Bom dia, gerente</span>
+      <h2>O armazém inteiro num resumo às 06:00</h2>
+      <p class="lead">Antes do primeiro caminhão encostar, o gerente já sabe como a noite passou: saldos, temperaturas fora da faixa, rondas pendentes e a cotação do dia.</p>
+      <p>No painel na web, os mesmos dados aparecem organizados por silo, para quem prefere ver em tela grande.</p>
+    </div>
+    <div class="celular revela">
+      <div class="tela">
+        <div class="wa-topo"><span class="avatar"><img src="/assets/img/simbolo.svg" alt=""></span><div><b>Agente Armazém Digital</b><small>online</small></div></div>
+        <div class="conversa" style="min-height:0">
+          <div class="balao dele"><b>Bom dia! Resumo do armazém</b><br><br>Estoque: <b>29.600 t</b> em 5 silos<br>Milho 20.000 t · Soja 9.600 t<br>Milho: R$ 67,80/sc · Soja: R$ 129,50/sc<br>Valor estimado do estoque: <b>R$ 43,3 milhões</b><br><br><b>Atenção</b><br>• Silo 3 com 31 °C na última leitura<br>• Silo 5 sem ronda há 3 dias<span class="hora">06:00</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="secao creme-2">
+  <div class="wrap">
+    <div class="cab revela">
+      <span class="sobretitulo">Piloto aberto</span>
+      <h2>Estamos escolhendo os primeiros armazéns</h2>
+      <p class="lead">O Armazém Digital roda sobre a mesma base do agente que já opera no leite. Agora estamos ajustando os indicadores com quem vive a rotina de grãos.</p>
+    </div>
+    <div class="grade g3">
+      <div class="passo claro revela"><span class="n">1</span><div><b>Conversa sobre a sua operação</b><span>Estruturas, produtos, equipe e o que hoje mais dá trabalho controlar.</span></div></div>
+      <div class="passo claro revela"><span class="n">2</span><div><b>Configuração do seu armazém</b><span>Silos, limites de temperatura e umidade, quem recebe cada aviso.</span></div></div>
+      <div class="passo claro revela"><span class="n">3</span><div><b>30 dias de uso acompanhado</b><span>A equipe usa no dia a dia e a gente ajusta junto com vocês.</span></div></div>
+    </div>
+    <p style="margin-top:32px" class="revela"><b>Investimento:</b> sob consulta, conforme o número de estruturas e o volume armazenado.</p>
+    <a class="btn btn-escuro revela" href="{{wa:Olá! Tenho armazém de grãos e quero participar do piloto do Armazém Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Quero ser piloto</a>
+  </div>
+</section>
+
+<section class="secao-sm">
+  <div class="wrap">
+    <div class="chamada-form revela">
+      <div><span class="sobretitulo">Diagnóstico em 3 minutos</span><h3>Monte o painel do seu armazém</h3><p>Marque os indicadores que importam e receba pelo WhatsApp uma proposta de como o agente acompanharia esses números na sua rotina.</p></div>
+      <a class="btn btn-escuro" href="/armazem-digital/indicadores/">Fazer o diagnóstico {{icone:seta}}</a>
+    </div>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="wrap">
+    <div class="cab centro revela"><span class="sobretitulo">Perguntas</span><h2>Dúvidas sobre o Armazém Digital</h2></div>
+    <div class="faq">
+      <details><summary>Preciso instalar sensores?</summary><p>Não. O agente funciona com as leituras que a sua equipe já faz, informadas por áudio ou mensagem no WhatsApp.</p></details>
+      <details><summary>Serve para armazém de fazenda e para cerealista?</summary><p>Sim. A configuração parte das suas estruturas e da sua rotina, seja um armazém próprio na fazenda, seja uma unidade que recebe grãos de terceiros.</p></details>
+      <details><summary>De onde vem a cotação?</summary><p>Dos indicadores diários CEPEA/ESALQ para milho e soja. Se o indicador não estiver disponível, o agente pergunta a cotação para o responsável que você indicar.</p></details>
+      <details><summary>Quem recebe os avisos?</summary><p>Você define. O aviso de temperatura pode ir para o encarregado de armazenagem, o resumo do dia para o gerente, e assim por diante.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="secao escura cta-final">
+  <div class="wrap revela">
+    <h2>Quer o seu armazém entre os primeiros?</h2>
+    <p class="lead">Conte quantos silos tem, quais grãos armazena e como a equipe registra a rotina hoje.</p>
+    <div class="acoes"><a class="btn btn-wa" href="{{wa:Olá! Tenho armazém de grãos e quero participar do piloto do Armazém Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Falar no WhatsApp</a></div>
+  </div>
+</section>

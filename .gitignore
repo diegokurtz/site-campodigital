@@ -1,0 +1,4 @@
+previa/
+dist/
+*.zip
+__pycache__/
