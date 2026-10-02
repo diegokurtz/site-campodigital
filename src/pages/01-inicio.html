@@ -44,7 +44,7 @@ descricao: Agentes autônomos pelo WhatsApp para o agro. Sua equipe manda áudio
         <ul>
           <li>{{icone:x}}<span>Anotação no caderno, passada para a planilha no fim do mês (quando passa).</span></li>
           <li>{{icone:x}}<span>Vencimento descoberto no dia, ou depois.</span></li>
-          <li>{{icone:x}}<span>Extrato do comprador aceito sem conferência, porque conferir dá trabalho.</span></li>
+          <li>{{icone:x}}<span>Extrato do laticínio difícil de entender: quanto foi base, bonificação, desconto e frete?</span></li>
           <li>{{icone:x}}<span>Para saber quanto gastou, alguém precisa montar o relatório.</span></li>
         </ul>
       </div>
@@ -53,7 +53,7 @@ descricao: Agentes autônomos pelo WhatsApp para o agro. Sua equipe manda áudio
         <ul>
           <li>{{icone:ok}}<span>Registro na hora, por áudio, foto ou texto, no WhatsApp que a equipe já usa.</span></li>
           <li>{{icone:ok}}<span>Aviso antes do vencimento e resumo do dia às 06:00, sem ninguém pedir.</span></li>
-          <li>{{icone:ok}}<span>Extrato conferido contra o que foi combinado, com a diferença em reais.</span></li>
+          <li>{{icone:ok}}<span>Extrato aberto item a item, com o preço do litro acompanhado mês a mês.</span></li>
           <li>{{icone:ok}}<span>Pergunta em português, resposta em segundos: "quanto gastei em setembro?"</span></li>
         </ul>
       </div>
@@ -71,7 +71,7 @@ descricao: Agentes autônomos pelo WhatsApp para o agro. Sua equipe manda áudio
     <div class="grade g4">
       <div class="cartao revela"><div class="icone">{{icone:registra}}</div><span class="verbo">Registra</span><h3>Fala vira lançamento</h3><p>Entende áudio, foto de nota e texto livre. Uma mensagem com vários fatos vira vários registros.</p><div class="exemplo">"Recebi 5 mil do laticínio e entreguei 1.700 litros"</div></div>
       <div class="cartao revela"><div class="icone">{{icone:sino}}</div><span class="verbo">Avisa</span><h3>Antes de virar problema</h3><p>Vencimentos, limites e rotinas atrasadas chegam no WhatsApp de quem precisa agir.</p><div class="exemplo">"Amanhã vence a parcela do trator: R$ 3.480,00"</div></div>
-      <div class="cartao revela"><div class="icone">{{icone:confere}}</div><span class="verbo">Confere</span><h3>O que foi pago contra o combinado</h3><p>Lê o extrato do comprador, compara com as regras do contrato e mostra o que há para recuperar.</p><div class="exemplo">"Encontrei 2 diferenças no extrato de setembro"</div></div>
+      <div class="cartao revela"><div class="icone">{{icone:confere}}</div><span class="verbo">Confere</span><h3>O extrato, item a item</h3><p>Lê o extrato do laticínio e separa preço base, bonificações, descontos e frete. Mostra quanto ficou o litro no mês.</p><div class="exemplo">"Em setembro o litro líquido ficou em R$ 2,67"</div></div>
       <div class="cartao revela"><div class="icone">{{icone:pergunta}}</div><span class="verbo">Responde</span><h3>Pergunta simples, número certo</h3><p>Consultas em linguagem natural sobre os próprios dados. Se não souber, diz que não sabe.</p><div class="exemplo">"O que vence esta semana?"</div></div>
     </div>
   </div>
@@ -87,7 +87,7 @@ descricao: Agentes autônomos pelo WhatsApp para o agro. Sua equipe manda áudio
       </div>
       <div class="abas" role="tablist" aria-label="Exemplos de uso" data-abas>
         <button class="aba" role="tab" id="aba-audio" aria-controls="demo-audio" aria-selected="true"><span class="ic">{{icone:mic}}</span><span><b>Mande um áudio</b><span>Fala do jeito de sempre. O agente transcreve, entende e confirma.</span></span></button>
-        <button class="aba" role="tab" id="aba-foto" aria-controls="demo-foto" aria-selected="false" tabindex="-1"><span class="ic">{{icone:camera}}</span><span><b>Fotografe o documento</b><span>Nota, boleto ou extrato. Ele lê e confere com o que foi combinado.</span></span></button>
+        <button class="aba" role="tab" id="aba-foto" aria-controls="demo-foto" aria-selected="false" tabindex="-1"><span class="ic">{{icone:camera}}</span><span><b>Fotografe o documento</b><span>Nota, boleto ou extrato. Ele lê e organiza item a item.</span></span></button>
         <button class="aba" role="tab" id="aba-pergunta" aria-controls="demo-pergunta" aria-selected="false" tabindex="-1"><span class="ic">{{icone:pergunta}}</span><span><b>Pergunte</b><span>Gastos, vencimentos, custo por litro. Resposta direta, com o número.</span></span></button>
         <button class="aba" role="tab" id="aba-alerta" aria-controls="demo-alerta" aria-selected="false" tabindex="-1"><span class="ic">{{icone:sol}}</span><span><b>Receba sem pedir</b><span>Resumo às 06:00 e avisos no momento certo, para a pessoa certa.</span></span></button>
       </div>
@@ -102,7 +102,7 @@ descricao: Agentes autônomos pelo WhatsApp para o agro. Sua equipe manda áudio
           </div>
           <div class="conversa painel-demo" id="demo-foto" role="tabpanel" aria-labelledby="aba-foto" hidden>
             <div class="balao meu"><div class="foto-doc"><i></i><i></i><i></i><i></i></div><div class="transc">Extrato do laticínio, setembro</div><span class="hora">18:03</span></div>
-            <div class="balao dele"><b>Conferi o extrato contra o contrato.</b><br>208.700 L entregues. Encontrei 2 diferenças:<br><br>• Preço base: pago <b>R$ 2,65</b>/L, combinado <b>R$ 2,70</b><br>• Frete: descontado <b>R$ 0,11</b>/L, combinado <b>R$ 0,09</b><br><br>Total a recuperar: <b>R$ 14.609,00</b><span class="hora">18:03</span></div>
+            <div class="balao dele"><b>Li o extrato de setembro.</b><br>208.700 L entregues.<br><br><span class="linha"><span>Preço base</span><b>R$ 2,65</b></span><span class="linha"><span>Bonif. volume</span><b>+ R$ 0,05</b></span><span class="linha"><span>Bonif. qualidade</span><b>+ R$ 0,06</b></span><span class="linha"><span>Frete</span><b>− R$ 0,09</b></span><span class="linha"><span>Litro líquido</span><b>R$ 2,67</b></span><br>Guardei no seu histórico.<span class="hora">18:03</span></div>
           </div>
           <div class="conversa painel-demo" id="demo-pergunta" role="tabpanel" aria-labelledby="aba-pergunta" hidden>
             <div class="balao meu">quanto gastei em setembro?<span class="hora">20:41</span></div>
@@ -138,7 +138,7 @@ descricao: Agentes autônomos pelo WhatsApp para o agro. Sua equipe manda áudio
         <ul>
           <li>Financeiro da fazenda pelo WhatsApp</li>
           <li>Resumo às 06:00 e avisos de vencimento</li>
-          <li>Conferência do extrato do laticínio</li>
+          <li>Preço do litro aberto item a item</li>
         </ul>
         <span class="mais">Conhecer {{icone:seta}}</span>
       </a>

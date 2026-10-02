@@ -3,7 +3,7 @@ caminho: /fazenda-digital/
 nav: fazenda
 prioridade: 0.9
 titulo: Fazenda Digital | Agente do leite pelo WhatsApp | Campo Digital
-descricao: O financeiro da fazenda de leite em dia pelo WhatsApp: lançamentos por áudio e foto, resumo às 06:00, avisos de vencimento e conferência do extrato do laticínio.
+descricao: O financeiro da fazenda de leite em dia pelo WhatsApp: lançamentos por áudio e foto, resumo às 06:00, avisos de vencimento e o extrato do laticínio aberto item a item, mês a mês.
 wa_topo: Olá! Vim pelo site e quero conhecer o Fazenda Digital (leite).
 ---
 <section class="hero hero-interna">
@@ -11,8 +11,8 @@ wa_topo: Olá! Vim pelo site e quero conhecer o Fazenda Digital (leite).
     <div>
       <div class="marca-produto"><img src="/assets/img/simbolo.svg" alt=""><span>Fazenda<b>Digital</b><small>by Campo Digital</small></span></div>
       <span class="selo"><i></i>Em operação</span>
-      <h1>O financeiro do leite em dia, e o pagamento do laticínio <em>conferido</em>.</h1>
-      <p class="lead">Um agente no WhatsApp que anota o que entra e o que sai, avisa antes de vencer, responde suas perguntas e confere se o laticínio pagou o que foi combinado.</p>
+      <h1>O financeiro do leite em dia, e o preço do litro <em>explicado</em>.</h1>
+      <p class="lead">Um agente no WhatsApp que anota o que entra e o que sai, avisa antes de vencer, responde suas perguntas e abre o extrato do laticínio item a item.</p>
       <div class="acoes">
         <a class="btn btn-wa" href="{{wa:Olá! Quero testar o Fazenda Digital na minha propriedade de leite.}}" target="_blank" rel="noopener">{{wa_svg}}Quero testar na minha fazenda</a>
         <a class="btn btn-linha" href="#planos">Ver planos</a>
@@ -42,7 +42,7 @@ wa_topo: Olá! Vim pelo site e quero conhecer o Fazenda Digital (leite).
     <div class="grade g3">
       <div class="cartao revela"><div class="icone">{{icone:mic}}</div><h3>1. Falou, anotou</h3><p>Comprou, pagou ou recebeu? Mande um áudio ou uma mensagem na hora. Pode juntar vários fatos numa mensagem só.</p></div>
       <div class="cartao revela"><div class="icone">{{icone:gota}}</div><h3>2. Informe o leite entregue</h3><p>O volume entregue é o que transforma despesa em custo por litro. Uma mensagem por dia ou por coleta resolve.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:camera}}</div><h3>3. Fotografe o extrato</h3><p>Chegou o extrato do laticínio? Foto no WhatsApp. O agente confere contra o contrato e avisa se faltou dinheiro.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:camera}}</div><h3>3. Fotografe o extrato</h3><p>Chegou o extrato do laticínio? Foto no WhatsApp. O agente separa base, bonificações, descontos e frete e guarda o mês no histórico.</p></div>
     </div>
   </div>
 </section>
@@ -56,9 +56,9 @@ wa_topo: Olá! Vim pelo site e quero conhecer o Fazenda Digital (leite).
     <div class="grade g3">
       <div class="cartao revela"><div class="icone">{{icone:sol}}</div><h3>Resumo às 06:00</h3><p>Todo dia cedo: o que entrou, o que saiu, o leite entregue, o que vence hoje e o custo por litro do mês.</p></div>
       <div class="cartao revela"><div class="icone">{{icone:sino}}</div><h3>Avisos de vencimento</h3><p>Lembrete na véspera para quem paga as contas. Nada de juros por esquecimento.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:pergunta}}</div><h3>Perguntas em português</h3><p>"Quanto gastei com ração em setembro?", "o que vence essa semana?", "quanto tenho a recuperar?"</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:confere}}</div><h3>Conferência da liquidação</h3><p>Preço base, frete e demais itens do extrato comparados com as regras do seu contrato com o laticínio.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:grafico}}</div><h3>Painel na web</h3><p>Receitas, despesas, custo por litro e conferências num só lugar. Abre por um link enviado pelo agente, sem senha.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:pergunta}}</div><h3>Perguntas em português</h3><p>"Quanto gastei com ração em setembro?", "o que vence essa semana?", "como ficaram minhas últimas liquidações?"</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:confere}}</div><h3>Extrato do laticínio aberto</h3><p>Preço base, cada bonificação, cada desconto e o frete, separados item a item, com o litro líquido do mês.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:grafico}}</div><h3>Painel na web</h3><p>Receitas, despesas, custo por litro e extratos num só lugar. Abre por um link enviado pelo agente, sem senha.</p></div>
       <div class="cartao revela"><div class="icone">{{icone:pessoa}}</div><h3>Equipe no mesmo número</h3><p>Proprietário, gestor e técnico conversam com o mesmo agente, cada um com o seu papel.</p></div>
     </div>
   </div>
@@ -67,23 +67,25 @@ wa_topo: Olá! Vim pelo site e quero conhecer o Fazenda Digital (leite).
 <section class="secao">
   <div class="wrap faixa-projetos">
     <div class="revela">
-      <span class="sobretitulo">Conferência da liquidação do leite</span>
-      <h2>Um mês de agente pode se pagar na primeira divergência</h2>
-      <p class="lead">Conferir o extrato do laticínio linha a linha dá trabalho, então quase ninguém faz. O agente faz em segundos, todo mês, e mostra a diferença em reais.</p>
-      <p>Você cadastra uma vez as regras combinadas com o laticínio, como preço base e frete. A partir daí, basta fotografar cada extrato.</p>
-      <a class="btn btn-escuro" href="{{wa:Olá! Quero entender como o Fazenda Digital confere o extrato do laticínio.}}" target="_blank" rel="noopener">{{wa_svg}}Quero conferir meus extratos</a>
+      <span class="sobretitulo">Preço do litro, item a item</span>
+      <h2>Entenda de onde vem cada centavo do seu litro</h2>
+      <p class="lead">Preço base, bonificação por volume e por qualidade, descontos e frete: o extrato do laticínio junta tudo num número só. O agente abre esse número e guarda o histórico, mês a mês.</p>
+      <p>Assim fica fácil ver o que mudou de um mês para o outro: se o preço base subiu, se a bonificação de qualidade caiu, se o frete pesou mais. Basta fotografar cada extrato.</p>
+      <a class="btn btn-escuro" href="{{wa:Olá! Quero entender melhor o extrato do meu laticínio com o Fazenda Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Quero entender meu extrato</a>
     </div>
     <div class="revela">
       <div class="extrato">
         <div class="tabela-rolagem">
         <table>
-          <caption class="sr">Exemplo de conferência de extrato do laticínio</caption>
-          <thead><tr><th>Item (208.700 L)</th><th class="num">Pago</th><th class="num">Combinado</th><th class="num">Diferença</th></tr></thead>
+          <caption class="sr">Exemplo de extrato do laticínio aberto item a item, em dois meses</caption>
+          <thead><tr><th>Por litro</th><th class="num">Agosto</th><th class="num">Setembro</th><th class="num">Variação</th></tr></thead>
           <tbody>
-            <tr class="dif"><td>Preço base por litro</td><td class="num">R$ 2,65</td><td class="num">R$ 2,70</td><td class="num">R$ 10.435,00</td></tr>
-                        <tr class="dif"><td>Frete descontado por litro</td><td class="num">R$ 0,11</td><td class="num">R$ 0,09</td><td class="num">R$ 4.174,00</td></tr>
+            <tr><td>Preço base</td><td class="num">R$ 2,62</td><td class="num">R$ 2,65</td><td class="num">+ R$ 0,03</td></tr>
+            <tr><td>Bonificação por volume</td><td class="num">+ R$ 0,05</td><td class="num">+ R$ 0,05</td><td class="num">R$ 0,00</td></tr>
+            <tr class="dif"><td>Bonificação por qualidade</td><td class="num">+ R$ 0,04</td><td class="num">+ R$ 0,06</td><td class="num">+ R$ 0,02</td></tr>
+            <tr><td>Frete</td><td class="num">− R$ 0,09</td><td class="num">− R$ 0,09</td><td class="num">R$ 0,00</td></tr>
           </tbody>
-          <tfoot><tr><td colspan="3">Total a recuperar</td><td class="num">R$ 14.609,00</td></tr></tfoot>
+          <tfoot><tr><td>Litro líquido</td><td class="num">R$ 2,62</td><td class="num">R$ 2,67</td><td class="num">+ R$ 0,05</td></tr></tfoot>
         </table>
         </div>
       </div>
@@ -136,7 +138,7 @@ wa_topo: Olá! Vim pelo site e quero conhecer o Fazenda Digital (leite).
           <li>Avisos de vencimento e resumo às 06:00</li>
           <li>Perguntas sobre os seus números</li>
           <li>Painel completo e equipe no mesmo número</li>
-          <li>Conferência da liquidação do laticínio nos planos superiores</li>
+          <li>Leitura do extrato e histórico do preço do litro nos planos superiores</li>
         </ul>
         <a class="btn btn-wa" href="{{wa:Olá! Quero saber mais sobre os planos pagos do Fazenda Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Falar sobre planos</a>
       </div>
@@ -170,7 +172,7 @@ wa_topo: Olá! Vim pelo site e quero conhecer o Fazenda Digital (leite).
     <div class="cab centro revela"><span class="sobretitulo">Perguntas</span><h2>Dúvidas sobre o Fazenda Digital</h2></div>
     <div class="faq">
       <details><summary>Serve para fazenda pequena?</summary><p>Sim. O agente foi pensado para quem não tem escritório nem tempo para planilha. Quanto menor a estrutura administrativa, mais ele ajuda.</p></details>
-      <details><summary>Preciso cadastrar o contrato com o laticínio?</summary><p>Só se quiser a conferência do extrato. Na implantação, registramos com você as regras de preço e descontos. Sem isso, todo o resto funciona normalmente.</p></details>
+      <details><summary>Preciso ter contrato com o laticínio?</summary><p>Não. O agente lê e organiza o extrato de qualquer forma. Se você tiver as condições combinadas por escrito, ele também confere se cada item veio como o combinado.</p></details>
       <details><summary>O agente substitui o contador?</summary><p>Não. Ele organiza a gestão do dia a dia da fazenda e deixa os números prontos. A parte fiscal e contábil continua com o seu contador, que pode receber os dados organizados.</p></details>
       <details><summary>Consigo tirar meus dados se quiser sair?</summary><p>Sim. Os dados são seus: você pode pedir a exportação ou a exclusão a qualquer momento.</p></details>
     </div>
