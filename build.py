@@ -18,8 +18,8 @@ SRC, DIST = RAIZ / "src", RAIZ / "dist"
 
 CONFIG = {
     "dominio": "https://campodigital.com.br",
-    "whatsapp": "5548996200390",            # número comercial (só dígitos, com DDI)
-    "whatsapp_legivel": "(48) 99620-0390",
+    "whatsapp": "5548996373942",            # número comercial (só dígitos, com DDI)
+    "whatsapp_legivel": "(48) 99637-3942",
     "preco_fazenda_a_partir": "R$ 149",      # "a partir de" (decisão 01/10/2026)
     "gratis_lancamentos": "40",
     "ano": str(date.today().year),
