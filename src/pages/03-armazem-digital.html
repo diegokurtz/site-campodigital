@@ -1,6 +1,7 @@
 ---
 caminho: /armazem-digital/
 nav: armazem
+ref: site-armazem
 prioridade: 0.9
 titulo: Armazém Digital | Agente para armazéns de grãos pelo WhatsApp | Campo Digital
 descricao: Secador, silo e estoque respondendo pelo WhatsApp. Leituras por áudio, alerta de temperatura, saldo por silo, cotação diária de milho e soja e valor do estoque.
@@ -14,7 +15,7 @@ wa_topo: Olá! Vim pelo site e quero conhecer o Armazém Digital (grãos).
       <h1>Secador, silo e estoque <em>respondendo pelo WhatsApp</em>.</h1>
       <p class="lead">O operador fala a leitura, o agente registra. A temperatura subiu, o agente avisa. O gerente pergunta o saldo, o agente responde, já com o valor do estoque na cotação do dia.</p>
       <div class="acoes">
-        <a class="btn btn-wa" href="{{wa:Olá! Tenho armazém de grãos e quero participar do piloto do Armazém Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Quero ser piloto</a>
+        <a class="btn btn-wa" href="{{wa:Olá! Tenho armazém de grãos e quero testar o Armazém Digital por {{cfg:teste_dias}} dias grátis.}}" target="_blank" rel="noopener">{{wa_svg}}Testar {{cfg:teste_dias}} dias grátis</a>
         <a class="btn btn-linha" href="#o-que-faz">O que o agente faz</a>
       </div>
     </div>
@@ -74,17 +75,74 @@ wa_topo: Olá! Vim pelo site e quero conhecer o Armazém Digital (grãos).
 <section class="secao creme-2">
   <div class="wrap">
     <div class="cab revela">
-      <span class="sobretitulo">Piloto aberto</span>
-      <h2>Estamos escolhendo os primeiros armazéns</h2>
+      <span class="sobretitulo">Como começar</span>
+      <h2>Do primeiro contato ao armazém funcionando</h2>
       <p class="lead">O Armazém Digital roda sobre a mesma base do agente que já opera no leite. Agora estamos ajustando os indicadores com quem vive a rotina de grãos.</p>
     </div>
     <div class="grade g3">
       <div class="passo claro revela"><span class="n">1</span><div><b>Conversa sobre a sua operação</b><span>Estruturas, produtos, equipe e o que hoje mais dá trabalho controlar.</span></div></div>
       <div class="passo claro revela"><span class="n">2</span><div><b>Configuração do seu armazém</b><span>Silos, limites de temperatura e umidade, quem recebe cada aviso.</span></div></div>
-      <div class="passo claro revela"><span class="n">3</span><div><b>30 dias de uso acompanhado</b><span>A equipe usa no dia a dia e a gente ajusta junto com vocês.</span></div></div>
+      <div class="passo claro revela"><span class="n">3</span><div><b>{{cfg:teste_dias}} dias de teste acompanhado</b><span>A equipe usa no dia a dia, sem cartão e sem cobrança, e a gente ajusta junto com vocês.</span></div></div>
     </div>
-    <p style="margin-top:32px" class="revela"><b>Investimento:</b> sob consulta, conforme o número de estruturas e o volume armazenado.</p>
-    <a class="btn btn-escuro revela" href="{{wa:Olá! Tenho armazém de grãos e quero participar do piloto do Armazém Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Quero ser piloto</a>
+  </div>
+</section>
+
+<section class="secao" id="planos">
+  <div class="wrap">
+    <div class="cab centro revela">
+      <span class="sobretitulo">Planos</span>
+      <h2>Os mesmos planos do Fazenda Digital</h2>
+      <p class="lead">Preço por armazém ou unidade, com {{cfg:usuarios_incluidos}} usuários e {{cfg:leitores_max}} leitores incluídos. São {{cfg:teste_dias}} dias para testar antes de decidir, sem cartão.</p>
+    </div>
+    <div class="precos p4">
+      <div class="plano revela">
+        <span class="nome">Teste</span>
+        <div class="valor">R$ 0<small>/{{cfg:teste_dias}} dias</small></div>
+        <p class="desc">Para ver o agente na rotina do armazém antes de decidir.</p>
+        <ul>
+          <li>Tudo do plano Mensal durante o teste</li>
+          <li>Sem cartão e sem cobrança</li>
+          <li>No fim, você escolhe o plano ou a conta fica só para consulta</li>
+        </ul>
+        <a class="btn btn-linha-escura" href="{{wa:Olá! Tenho armazém de grãos e quero testar o Armazém Digital por {{cfg:teste_dias}} dias grátis.}}" target="_blank" rel="noopener">Testar {{cfg:teste_dias}} dias grátis</a>
+      </div>
+      <div class="plano destaque-plano revela">
+        <span class="nome">Mensal</span>
+        <div class="valor">{{brl:preco_mensal}}<small>/mês</small></div>
+        <p class="desc">Para ter secagem, silos e estoque registrados no agente.</p>
+        <ul>
+          <li>Leituras de secador, termometria e aeração por áudio</li>
+          <li>Avisos de temperatura e de ronda atrasada</li>
+          <li>Saldo por silo, cotação diária e valor do estoque</li>
+          <li>Resumo às 06:00 e painel na web</li>
+          <li>{{cfg:usuarios_incluidos}} usuários e {{cfg:leitores_max}} leitores incluídos</li>
+        </ul>
+        <a class="btn btn-wa" href="{{wa:Olá! Quero assinar o plano Mensal do Armazém Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Assinar o mensal</a>
+      </div>
+      <div class="plano revela">
+        <span class="nome">Anual</span>
+        <div class="valor"><span class="de">12 meses pelo preço de {{cfg:meses_cobrados_anual}}</span>{{brl:preco_anual}}<small>/ano</small></div>
+        <p class="desc">Tudo do plano Mensal, pagando {{cfg:meses_cobrados_anual}} meses por ano.</p>
+        <ul>
+          <li>Pix ou boleto, à vista</li>
+          <li>Ou em até {{cfg:parcelas_max}}x no cartão</li>
+          <li>{{cfg:usuarios_incluidos}} usuários e {{cfg:leitores_max}} leitores incluídos</li>
+        </ul>
+        <a class="btn btn-linha-escura" href="{{wa:Olá! Quero assinar o plano Anual do Armazém Digital.}}" target="_blank" rel="noopener">Assinar o anual</a>
+      </div>
+      <div class="plano revela">
+        <span class="nome">Várias unidades ou cooperativa</span>
+        <div class="valor" style="font-size:1.6rem">Por projeto</div>
+        <p class="desc">Para cerealistas, cooperativas e grupos com vários armazéns.</p>
+        <ul>
+          <li>Proposta própria, conforme o número de unidades</li>
+          <li>Painel consolidado desenhado no projeto</li>
+          <li>Implantação e treinamento da equipe</li>
+        </ul>
+        <a class="btn btn-linha-escura" href="{{wa:Olá! Quero falar com a equipe sobre o Armazém Digital para várias unidades ou cooperativa. [ref:site-cooperativas]}}" target="_blank" rel="noopener">Falar com a equipe</a>
+      </div>
+    </div>
+    <p class="precos-nota">Usuário adicional, além dos {{cfg:usuarios_incluidos}} incluídos: {{brl:preco_usuario_adicional}} por mês. Valores sem impostos adicionais. Condições completas nos <a href="/termos/">Termos de uso e assinatura</a>.</p>
   </div>
 </section>
 
@@ -112,7 +170,7 @@ wa_topo: Olá! Vim pelo site e quero conhecer o Armazém Digital (grãos).
 <section class="secao escura cta-final">
   <div class="wrap revela">
     <h2>Quer o seu armazém entre os primeiros?</h2>
-    <p class="lead">Conte quantos silos tem, quais grãos armazena e como a equipe registra a rotina hoje.</p>
-    <div class="acoes"><a class="btn btn-wa" href="{{wa:Olá! Tenho armazém de grãos e quero participar do piloto do Armazém Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Falar no WhatsApp</a></div>
+    <p class="lead">Conte quantos silos tem, quais grãos armazena e como a equipe registra a rotina hoje. O teste é grátis por {{cfg:teste_dias}} dias, sem cartão.</p>
+    <div class="acoes"><a class="btn btn-wa" href="{{wa:Olá! Tenho armazém de grãos e quero testar o Armazém Digital por {{cfg:teste_dias}} dias grátis.}}" target="_blank" rel="noopener">{{wa_svg}}Testar {{cfg:teste_dias}} dias grátis</a></div>
   </div>
 </section>

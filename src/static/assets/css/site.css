@@ -239,6 +239,11 @@ a.produto:hover{transform:translateY(-3px);box-shadow:var(--sombra);border-color
 .plano .btn{margin-top:auto;justify-content:center}
 .precos-nota{text-align:center;color:var(--tinta-2);font-size:.9rem;margin-top:20px}
 @media (max-width:940px){.precos{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+.precos.p4{grid-template-columns:repeat(4,1fr);gap:16px}
+.precos.p4 .plano{padding:24px}
+.precos.p4 .valor{font-size:2rem}
+@media (max-width:1100px){.precos.p4{grid-template-columns:repeat(2,1fr);max-width:none}}
+@media (max-width:640px){.precos.p4{grid-template-columns:1fr;max-width:480px}}
 
 /* conciliação (destaque fazenda) */
 .extrato{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;font-size:.95rem}

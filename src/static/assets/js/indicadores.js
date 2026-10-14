@@ -59,7 +59,8 @@
       if (its.length) { L.push('', '*' + LBL[v].toUpperCase() + '*'); its.forEach(function (i) { L.push('• ' + i.n); }); }
     });
     if (val('p-falta')) L.push('', '*Faltou:* ' + val('p-falta'));
-    if (S.teste) L.push('', '*Teste 30 dias:* ' + S.teste);
+    if (S.teste) L.push('', '*Teste ' + C.teste_dias + ' dias:* ' + S.teste);
+    if (C.ref) L.push('', '[ref:' + C.ref + ']');
     return L.join('\n');
   }
   function atualizar() {

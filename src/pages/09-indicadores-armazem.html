@@ -4,6 +4,7 @@ prioridade: 0.6
 titulo: Quais números mandam no seu armazém? | Armazém Digital
 descricao: Diagnóstico Armazém Digital em 3 minutos: 12 indicadores, 1 toque cada, cerca de 3 minutos. Respostas enviadas pelo WhatsApp.
 wa_topo: Olá! Vim pela página de indicadores do Armazém Digital.
+ref: site-armazem
 sem_flutuante: sim
 classe_body: com-barra
 js: /assets/js/indicadores.js
@@ -31,7 +32,7 @@ js: /assets/js/indicadores.js
         <input type="text" id="p-falta" placeholder="Ex.: consumo de energia por tonelada">
       </div>
       <div class="campo">
-        <span class="rot">Toparia testar na sua unidade por 30 dias?</span>
+        <span class="rot">Toparia testar na sua unidade por {{cfg:teste_dias}} dias?</span>
         <div class="chips" id="p-teste"></div>
       </div>
       <p class="rodape-form">As respostas não ficam guardadas em nenhum servidor: elas vão como mensagem de WhatsApp. Se o WhatsApp não abrir, toque em <button class="copiar" type="button" id="copiar">copiar respostas</button> e envie para {{cfg:whatsapp_legivel}}.</p>
@@ -51,6 +52,8 @@ js: /assets/js/indicadores.js
  "titulo": "Armazém Digital · indicadores",
  "chave": "armazem-validacao-3min",
  "whatsapp": "{{cfg:whatsapp}}",
+ "ref": "site-armazem",
+ "teste_dias": "{{cfg:teste_dias}}",
  "blocos": [
   {
    "nome": "Recebimento",

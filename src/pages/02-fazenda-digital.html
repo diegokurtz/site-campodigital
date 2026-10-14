@@ -1,6 +1,7 @@
 ---
 caminho: /fazenda-digital/
 nav: fazenda
+ref: site-leite
 prioridade: 0.9
 titulo: Fazenda Digital | Agente do leite pelo WhatsApp | Campo Digital
 descricao: O financeiro da fazenda de leite em dia pelo WhatsApp: lançamentos por áudio e foto, resumo às 06:00, avisos de vencimento e o extrato do laticínio aberto item a item, mês a mês.
@@ -114,47 +115,59 @@ wa_topo: Olá! Vim pelo site e quero conhecer o Fazenda Digital (leite).
   <div class="wrap">
     <div class="cab centro revela">
       <span class="sobretitulo">Planos</span>
-      <h2>Comece grátis. Cresça quando fizer sentido.</h2>
-      <p class="lead">Preço por propriedade, sem cobrança por usuário. Fale com a gente para montar o plano certo para o tamanho da sua operação.</p>
+      <h2>Teste grátis. Assine quando fizer sentido.</h2>
+      <p class="lead">Preço por fazenda, com {{cfg:usuarios_incluidos}} usuários e {{cfg:leitores_max}} leitores incluídos. São {{cfg:teste_dias}} dias para testar antes de decidir, sem cartão.</p>
     </div>
-    <div class="precos">
+    <div class="precos p4">
       <div class="plano revela">
-        <span class="nome">Grátis</span>
-        <div class="valor">R$ 0</div>
-        <p class="desc">Para experimentar o agente na rotina, sem compromisso.</p>
+        <span class="nome">Teste</span>
+        <div class="valor">R$ 0<small>/{{cfg:teste_dias}} dias</small></div>
+        <p class="desc">Para ver o agente na sua rotina antes de decidir.</p>
         <ul>
-          <li>Até {{cfg:gratis_lancamentos}} lançamentos por mês</li>
-          <li>Resumo diário no WhatsApp</li>
-          <li>Painel básico</li>
+          <li>Tudo do plano Mensal durante o teste</li>
+          <li>Sem cartão e sem cobrança</li>
+          <li>No fim, você escolhe o plano ou a conta fica só para consulta</li>
         </ul>
-        <a class="btn btn-linha-escura" href="{{wa:Olá! Quero começar no plano Grátis do Fazenda Digital.}}" target="_blank" rel="noopener">Começar grátis</a>
+        <a class="btn btn-linha-escura" href="{{wa:Olá! Quero testar o Fazenda Digital por {{cfg:teste_dias}} dias grátis.}}" target="_blank" rel="noopener">Testar {{cfg:teste_dias}} dias grátis</a>
       </div>
       <div class="plano destaque-plano revela">
-        <span class="nome">Fazenda</span>
-        <div class="valor"><span class="de">a partir de</span>{{cfg:preco_fazenda_a_partir}}<small>/mês</small></div>
+        <span class="nome">Mensal</span>
+        <div class="valor">{{brl:preco_mensal}}<small>/mês</small></div>
         <p class="desc">Para quem quer o financeiro do leite inteiro no agente.</p>
         <ul>
-          <li>Lançamentos ilimitados</li>
+          <li>Lançamentos por áudio, foto e texto</li>
           <li>Avisos de vencimento e resumo às 06:00</li>
           <li>Perguntas sobre os seus números</li>
-          <li>Painel completo e equipe no mesmo número</li>
-          <li>Leitura do extrato e histórico do preço do litro nos planos superiores</li>
+          <li>Leitura do extrato e histórico do preço do litro</li>
+          <li>Painel na web</li>
+          <li>{{cfg:usuarios_incluidos}} usuários e {{cfg:leitores_max}} leitores incluídos</li>
         </ul>
-        <a class="btn btn-wa" href="{{wa:Olá! Quero saber mais sobre os planos pagos do Fazenda Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Falar sobre planos</a>
+        <a class="btn btn-wa" href="{{wa:Olá! Quero assinar o plano Mensal do Fazenda Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Assinar o mensal</a>
       </div>
       <div class="plano revela">
-        <span class="nome">Parceiros</span>
-        <div class="valor" style="font-size:1.6rem">Sob consulta</div>
-        <p class="desc">Para técnicos, consultorias, cooperativas e laticínios que atendem vários produtores.</p>
+        <span class="nome">Anual</span>
+        <div class="valor"><span class="de">12 meses pelo preço de {{cfg:meses_cobrados_anual}}</span>{{brl:preco_anual}}<small>/ano</small></div>
+        <p class="desc">Tudo do plano Mensal, pagando {{cfg:meses_cobrados_anual}} meses por ano.</p>
         <ul>
-          <li>Condições por produtor atendido</li>
-          <li>Suporte direto para a sua equipe</li>
+          <li>Pix ou boleto, à vista</li>
+          <li>Ou em até {{cfg:parcelas_max}}x no cartão</li>
+          <li>{{cfg:usuarios_incluidos}} usuários e {{cfg:leitores_max}} leitores incluídos</li>
+        </ul>
+        <a class="btn btn-linha-escura" href="{{wa:Olá! Quero assinar o plano Anual do Fazenda Digital.}}" target="_blank" rel="noopener">Assinar o anual</a>
+      </div>
+      <div class="plano revela">
+        <span class="nome">Várias fazendas ou cooperativa</span>
+        <div class="valor" style="font-size:1.6rem">Por projeto</div>
+        <p class="desc">Para cooperativas, laticínios, consultorias e grupos com várias propriedades.</p>
+        <ul>
+          <li>Proposta própria, conforme o número de unidades</li>
+          <li>Painel consolidado desenhado no projeto</li>
           <li>Implantação e treinamento da equipe</li>
         </ul>
-        <a class="btn btn-linha-escura" href="{{wa:Olá! Atendo vários produtores de leite e quero saber das condições para parceiros.}}" target="_blank" rel="noopener">Ser parceiro</a>
+        <a class="btn btn-linha-escura" href="{{wa:Olá! Quero falar com a equipe sobre o Fazenda Digital para várias fazendas ou cooperativa. [ref:site-cooperativas]}}" target="_blank" rel="noopener">Falar com a equipe</a>
       </div>
     </div>
-    <p class="precos-nota">Condições de lançamento, sujeitas a alteração. Valores sem impostos adicionais.</p>
+    <p class="precos-nota">Usuário adicional, além dos {{cfg:usuarios_incluidos}} incluídos: {{brl:preco_usuario_adicional}} por mês. Valores sem impostos adicionais. Condições completas nos <a href="/termos/">Termos de uso e assinatura</a>.</p>
   </div>
 </section>
 

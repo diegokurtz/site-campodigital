@@ -5,9 +5,12 @@ Uso:  python build.py
 Tudo que muda com frequência (WhatsApp, preços, domínio) está em CONFIG abaixo.
 Cada página em src/pages/*.html começa com um bloco de metadados entre linhas '---'.
 Marcadores aceitos no conteúdo:
-  {{wa:Mensagem pronta}}  -> link wa.me com a mensagem já preenchida
+  {{wa:Mensagem pronta}}  -> link wa.me com a mensagem já preenchida e a origem [ref:...] da página
+                             (se a mensagem já tiver [ref:...], vale a dela)
   {{icone:nome}}          -> ícone SVG em linha
   {{cfg:chave}}           -> valor de CONFIG
+  {{brl:chave}}           -> valor de CONFIG em reais, sem centavos (R$ 1.490)
+  {{brl2:chave}}          -> valor de CONFIG em reais, com centavos (R$ 1.490,00)
 """
 import html, json, re, shutil, urllib.parse
 from datetime import date
@@ -20,10 +23,34 @@ CONFIG = {
     "dominio": "https://campodigital.com.br",
     "whatsapp": "5548996373942",            # número comercial (só dígitos, com DDI)
     "whatsapp_legivel": "(48) 99637-3942",
-    "preco_fazenda_a_partir": "R$ 149",      # "a partir de" (decisão 01/10/2026)
-    "gratis_lancamentos": "40",
+    "ref_padrao": "site-inicio",             # origem anexada às mensagens do WhatsApp; páginas trocam com "ref:" no topo
+    # Planos (Termos de Uso e Assinatura versão 2026-10, aprovados em 14/10/2026)
+    "preco_mensal": 149,
+    "preco_anual": 1490,
+    "teste_dias": 14,
+    "parcelas_max": 4,
+    "usuarios_incluidos": 3,
+    "preco_usuario_adicional": 29,
+    "leitores_max": 3,
+    "termos_versao": "2026-10",
+    "termos_vigencia": "14/10/2026",
+    # Empresa que fatura
+    "razao_social": "DJ KURTZ LTDA",
+    "razao_social_marca": "DJ Kurtz Ltda",
+    "cnpj": "33.649.413/0001-50",
+    "endereco": "Av. Engenheiro Max de Souza, 1135, sala 1010, Coqueiros, Florianópolis/SC, CEP 88080-000",
     "ano": str(date.today().year),
     "cidade": "Florianópolis, SC",
+}
+
+# Derivados: o anual cobra N meses (1490 / 149 = 10), e o usuário adicional no anual segue a mesma conta.
+CONFIG["meses_cobrados_anual"] = round(CONFIG["preco_anual"] / CONFIG["preco_mensal"])
+CONFIG["preco_usuario_adicional_anual"] = CONFIG["preco_usuario_adicional"] * CONFIG["meses_cobrados_anual"]
+
+# Valores escritos nos Termos aprovados. Se mudar preço, os Termos precisam de nova versão.
+TERMOS_APROVADOS = {
+    "2026-10": {"preco_mensal": 149, "preco_anual": 1490, "teste_dias": 14, "parcelas_max": 4,
+                "usuarios_incluidos": 3, "preco_usuario_adicional": 29, "leitores_max": 3},
 }
 
 ICONES = {
@@ -71,15 +98,25 @@ def icone(nome):
     return f'<svg viewBox="0 0 24 24" aria-hidden="true">{ICONES[nome]}</svg>'
 
 
-def wa(msg):
+def wa(msg, ref=None):
+    if "[ref:" not in msg:
+        msg = f"{msg} [ref:{ref or CONFIG['ref_padrao']}]"
     return f"https://wa.me/{CONFIG['whatsapp']}?text=" + urllib.parse.quote(msg)
 
 
-def expandir(txt):
-    txt = re.sub(r"\{\{wa:(.+?)\}\}", lambda m: html.escape(wa(m.group(1)), quote=True), txt)
+def brl(v, centavos=False):
+    txt = f"{v:,.2f}" if centavos else f"{v:,.0f}"
+    return "R$ " + txt.replace(",", "X").replace(".", ",").replace("X", ".")
+
+
+def expandir(txt, ref=None):
+    # Valores de CONFIG primeiro, para poderem aparecer dentro de {{wa:...}}
+    txt = re.sub(r"\{\{cfg:(\w+)\}\}", lambda m: str(CONFIG[m.group(1)]), txt)
+    txt = re.sub(r"\{\{brl:(\w+)\}\}", lambda m: brl(CONFIG[m.group(1)]), txt)
+    txt = re.sub(r"\{\{brl2:(\w+)\}\}", lambda m: brl(CONFIG[m.group(1)], centavos=True), txt)
+    txt = re.sub(r"\{\{wa:(.+?)\}\}", lambda m: html.escape(wa(m.group(1), ref), quote=True), txt)
     txt = re.sub(r"\{\{icone:(\w+)\}\}", lambda m: icone(m.group(1)), txt)
     txt = txt.replace("{{wa_svg}}", WA_SVG)
-    txt = re.sub(r"\{\{cfg:(\w+)\}\}", lambda m: CONFIG[m.group(1)], txt)
     return txt
 
 
@@ -99,6 +136,7 @@ def layout(meta, corpo):
     titulo = meta["titulo"]
     desc = meta["descricao"]
     ativo = meta.get("nav", "")
+    ref = meta.get("ref", CONFIG["ref_padrao"])
     itens = []
     for href, rotulo, chave in NAV:
         cur = ' aria-current="page"' if chave == ativo else ""
@@ -109,7 +147,7 @@ def layout(meta, corpo):
     if caminho == "/":
         jsonld = '<script type="application/ld+json">' + json.dumps({
             "@context": "https://schema.org", "@type": "Organization",
-            "name": "Campo Digital", "url": CONFIG["dominio"],
+            "name": "Campo Digital", "legalName": CONFIG["razao_social_marca"], "taxID": CONFIG["cnpj"], "url": CONFIG["dominio"],
             "logo": CONFIG["dominio"] + "/assets/img/campo-digital-512.png",
             "description": desc,
             "address": {"@type": "PostalAddress", "addressLocality": "Florianópolis", "addressRegion": "SC", "addressCountry": "BR"},
@@ -118,7 +156,7 @@ def layout(meta, corpo):
     classe_body = f' class="{meta["classe_body"]}"' if meta.get("classe_body") else ""
     js_extra = "".join(f'\n<script src="{j.strip()}" defer></script>' for j in meta.get("js", "").split(",") if j.strip())
     flutuante = "" if meta.get("sem_flutuante") else (
-        f'<a class="wa-flutuante" href="{html.escape(wa(msg_topo), quote=True)}" target="_blank" rel="noopener" '
+        f'<a class="wa-flutuante" href="{html.escape(wa(msg_topo, ref), quote=True)}" target="_blank" rel="noopener" '
         f'aria-label="Falar no WhatsApp" style="color:#152B1C">{WA_SVG}</a>')
     return f"""<!doctype html>
 <html lang="pt-BR" class="sem-js">
@@ -154,12 +192,12 @@ def layout(meta, corpo):
     <button class="menu-botao" aria-expanded="false" aria-controls="menu">Menu</button>
     <nav class="menu" id="menu" aria-label="Principal">
       {''.join(itens)}
-      <a class="btn btn-wa btn-sm" href="{html.escape(wa(msg_topo), quote=True)}" target="_blank" rel="noopener">{WA_SVG}Falar no WhatsApp</a>
+      <a class="btn btn-wa btn-sm" href="{html.escape(wa(msg_topo, ref), quote=True)}" target="_blank" rel="noopener">{WA_SVG}Falar no WhatsApp</a>
     </nav>
   </div>
 </header>
 <main id="conteudo">
-{expandir(corpo)}
+{expandir(corpo, ref)}
 </main>
 <footer class="rodape">
   <div class="wrap">
@@ -188,19 +226,20 @@ def layout(meta, corpo):
         <ul>
           <li><a href="/#quem-somos">Quem somos</a></li>
           <li><a href="/#perguntas">Perguntas frequentes</a></li>
-          <li><a href="{html.escape(wa('Olá! Vim pelo site da Campo Digital.'), quote=True)}" target="_blank" rel="noopener">WhatsApp {CONFIG['whatsapp_legivel']}</a></li>
+          <li><a href="{html.escape(wa('Olá! Vim pelo site da Campo Digital.', ref), quote=True)}" target="_blank" rel="noopener">WhatsApp {CONFIG['whatsapp_legivel']}</a></li>
         </ul>
       </div>
       <div>
         <h4>Legal</h4>
         <ul>
           <li><a href="/privacidade/">Privacidade e LGPD</a></li>
-          <li><a href="/termos/">Termos de uso</a></li>
+          <li><a href="/termos/">Termos de uso e assinatura</a></li>
         </ul>
       </div>
     </div>
     <div class="base">
       <span>© {CONFIG['ano']} Campo Digital. Todos os direitos reservados.</span>
+      <span>Campo Digital é marca de {CONFIG['razao_social_marca']} · CNPJ {CONFIG['cnpj']}</span>
       <span>{CONFIG['cidade']} · Este site não usa cookies de rastreamento.</span>
     </div>
   </div>
@@ -232,6 +271,11 @@ def main():
     import sys
     global DIST
     previa = "--previa" in sys.argv
+    aprovado = TERMOS_APROVADOS.get(CONFIG["termos_versao"], {})
+    divergentes = [k for k, v in aprovado.items() if CONFIG[k] != v]
+    if not aprovado or divergentes:
+        sys.exit(f"CONFIG diverge dos Termos versão {CONFIG['termos_versao']} em {divergentes or 'tudo'}. "
+                 "Preço mudou? Publique nova versão dos Termos antes de gerar o site.")
     if previa:
         DIST = RAIZ / "previa"
     if DIST.exists():

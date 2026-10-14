@@ -1,34 +1,64 @@
 ---
 caminho: /termos/
 prioridade: 0.3
-titulo: Termos de Uso do site | Campo Digital
-descricao: Termos de uso do site institucional da Campo Digital.
+titulo: Termos de Uso e Assinatura | Campo Digital
+descricao: Termos de uso e assinatura do Agente Campo Digital: teste grátis, planos, pagamento, cancelamento, dados e foro.
 ---
 <section class="secao">
   <div class="wrap texto-legal">
     <span class="sobretitulo">Legal</span>
-    <h1>Termos de Uso do site</h1>
-    <p>Última atualização: 1º de outubro de 2026</p>
+    <h1>Termos de Uso e Assinatura do Agente Campo Digital</h1>
+    <p>Versão {{cfg:termos_versao}} · vigente a partir de {{cfg:termos_vigencia}}</p>
 
-    <h2>1. Sobre este site</h2>
-    <p>Este site é mantido pela Campo Digital, com sede em Florianópolis, SC, e tem caráter apenas informativo sobre as soluções oferecidas.</p>
+    <p><b>Quem somos.</b> O Agente Campo Digital é oferecido por {{cfg:razao_social}}, CNPJ {{cfg:cnpj}}, {{cfg:endereco}}, sob o nome fantasia Campo Digital ("Campo Digital", "nós").</p>
 
-    <h2>2. Informações e exemplos</h2>
-    <p>As conversas, telas, valores e resultados mostrados no site são ilustrativos, com dados fictícios, e servem para explicar o funcionamento dos agentes. Funcionalidades, condições comerciais e preços podem mudar e só valem nos termos de uma proposta ou contrato firmado.</p>
+    <h2>1. O serviço</h2>
+    <p>O Agente Campo Digital é um assistente pelo WhatsApp que registra lançamentos da operação (por áudio, texto ou foto), organiza as informações, envia avisos e resumos e oferece um painel de consulta. As funções disponíveis são as descritas no site e na conversa com o agente no momento da contratação. O serviço apoia a gestão, mas as decisões da operação são sempre do cliente.</p>
 
-    <h2>3. Contratação</h2>
-    <p>A contratação de qualquer solução da Campo Digital é feita por proposta e contrato específicos, que prevalecem sobre o conteúdo deste site.</p>
+    <h2>2. Conta e usuários</h2>
+    <p>A conta é criada pelo WhatsApp por um responsável (titular). Cada assinatura inclui até {{cfg:usuarios_incluidos}} usuários e até {{cfg:leitores_max}} leitores (pessoas que apenas recebem resumos e avisos e fazem consultas, sem lançar dados), sem custo adicional. O titular pode convidar mais pessoas; cada usuário adicional custa {{brl2:preco_usuario_adicional}} por mês, somado à mensalidade (ou ao valor anual, proporcional aos meses restantes, quando incluído no meio do período). Operações com várias unidades são contratadas por projeto, com proposta própria. O titular responde pelo uso feito pelas pessoas que convidar.</p>
 
-    <h2>4. Propriedade intelectual</h2>
-    <p>Marcas, logotipos, textos e elementos visuais deste site pertencem à Campo Digital ou a seus licenciantes. Não é permitido reproduzi-los para fins comerciais sem autorização.</p>
+    <h2>3. Teste grátis</h2>
+    <p>Toda conta nova tem {{cfg:teste_dias}} dias de teste grátis, sem cartão e sem cobrança. Ao fim do teste, a conta passa a funcionar apenas para consulta e contratação. Se não houver contratação, os dados ficam guardados por 60 dias e depois são excluídos ou anonimizados.</p>
 
-    <h2>5. Links externos</h2>
-    <p>Os botões de contato levam ao WhatsApp, serviço de terceiro com termos próprios. Não nos responsabilizamos pelo conteúdo ou pelas práticas de sites de terceiros.</p>
+    <h2>4. Planos e preços</h2>
+    <ul>
+      <li>Mensal: {{brl2:preco_mensal}} por mês, com renovação automática mensal.</li>
+      <li>Anual: {{brl2:preco_anual}} por 12 meses, pagos à vista (Pix, boleto ou cartão) ou em até {{cfg:parcelas_max}} parcelas no cartão de crédito, com renovação automática anual.</li>
+      <li>Usuário adicional (acima de {{cfg:usuarios_incluidos}}): {{brl2:preco_usuario_adicional}} por mês cada, no mensal; no anual, {{brl2:preco_usuario_adicional_anual}} por usuário ({{cfg:meses_cobrados_anual}} meses).</li>
+    </ul>
+    <p>Os preços podem mudar para novas contratações. Para quem já é cliente, qualquer reajuste é avisado com 30 dias de antecedência e vale a partir da próxima renovação.</p>
 
-    <h2>6. Privacidade</h2>
-    <p>O tratamento de dados pessoais segue a nossa <a href="/privacidade/">Política de Privacidade</a>.</p>
+    <h2>5. Pagamento e atraso</h2>
+    <p>As cobranças são processadas por plataforma de pagamento parceira. Em caso de atraso, a conta segue normal por 5 dias; depois disso, passa a funcionar somente para consulta até a regularização. Após 60 dias de atraso, a assinatura pode ser cancelada.</p>
 
-    <h2>7. Foro</h2>
-    <p>Estes termos seguem a legislação brasileira. Fica eleito o foro da comarca de Florianópolis, SC.</p>
+    <h2>6. Renovação</h2>
+    <p>Mensal e anual renovam automaticamente. Avisamos pelo WhatsApp 7 dias antes da renovação do anual (e 30 dias antes, no caso de reajuste).</p>
+
+    <h2>7. Direito de arrependimento</h2>
+    <p>Por se tratar de contratação à distância, o cliente pode desistir em até 7 dias após o pagamento, com devolução integral do valor pago (art. 49 do Código de Defesa do Consumidor), pedindo pelo próprio WhatsApp do agente.</p>
+
+    <h2>8. Cancelamento</h2>
+    <ul>
+      <li>Mensal: pode ser cancelado a qualquer momento, sem multa. O acesso segue até o fim do mês já pago.</li>
+      <li>Anual: após os 7 dias do arrependimento, o cancelamento impede a renovação e o acesso segue até o fim do período pago, sem devolução proporcional.</li>
+    </ul>
+
+    <h2>9. Seus dados</h2>
+    <p>Os dados lançados são do cliente. Usamos esses dados apenas para prestar o serviço, nos termos da nossa <a href="/privacidade/">Política de Privacidade</a> e da LGPD. O titular pode pedir a qualquer momento a exportação ou a exclusão dos dados pelo WhatsApp do agente, com a palavra "Privacidade".</p>
+
+    <h2>10. Uso adequado</h2>
+    <p>É proibido usar o serviço para fins ilegais, enviar conteúdo de terceiros sem autorização ou tentar acessar dados de outras contas. O descumprimento permite suspender a conta.</p>
+
+    <h2>11. Disponibilidade e limites</h2>
+    <p>Trabalhamos para manter o serviço disponível de forma contínua, mas podem ocorrer interrupções por manutenção ou por falhas de terceiros (internet, WhatsApp). Avisos e resumos são ferramentas de apoio e não substituem a conferência do cliente. Nossa responsabilidade total fica limitada ao valor pago nos últimos 12 meses, salvo nos casos em que a lei não permitir esse limite.</p>
+
+    <h2>12. Aceite</h2>
+    <p>O aceite destes termos é registrado pelo WhatsApp, com data, hora, telefone e versão dos termos, antes do primeiro pagamento.</p>
+
+    <h2>13. Foro</h2>
+    <p>Fica eleito o foro da comarca de Florianópolis/SC, ressalvado o direito do consumidor de propor ação no foro do seu domicílio.</p>
+
+    <p id="versao" data-versao="{{cfg:termos_versao}}" style="margin-top:2.5em;padding-top:1em;border-top:1px solid var(--linha)"><b>Versão {{cfg:termos_versao}} · vigente a partir de {{cfg:termos_vigencia}}</b></p>
   </div>
 </section>

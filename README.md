@@ -13,16 +13,18 @@ Site estático, sem dependências de terceiros em tempo de execução: sem cooki
 
 ## Como alterar
 
-1. Edite o texto em `src/pages/*.html`, ou os dados fixos (WhatsApp, preço "a partir de", domínio) no bloco `CONFIG` do `build.py`.
+1. Edite o texto em `src/pages/*.html`, ou os dados fixos (WhatsApp, preços e condições dos planos, empresa, domínio) no bloco `CONFIG` do `build.py`. Preço não se digita na página: use `{{brl:preco_mensal}}` e afins.
 2. Gere de novo: `python build.py` (gera `dist/`) e `python build.py --previa` (gera `previa/`).
 3. Imagens de compartilhamento e favicons: `python gerar_imagens.py` (precisa de Playwright). Só é necessário se a logo mudar.
 
-Marcadores aceitos nas páginas: `{{wa:mensagem pronta}}` (link do WhatsApp com a mensagem preenchida), `{{icone:nome}}`, `{{cfg:chave}}`.
+Marcadores aceitos nas páginas: `{{wa:mensagem pronta}}` (link do WhatsApp com a mensagem preenchida e a origem `[ref:...]` da página, definida por `ref:` no topo; se a mensagem já tiver `[ref:...]`, vale a dela), `{{icone:nome}}`, `{{cfg:chave}}`, `{{brl:chave}}` (R$ 1.490) e `{{brl2:chave}}` (R$ 1.490,00).
+
+Os preços estão escritos nos Termos de Uso e Assinatura (versão em `termos_versao`). O build recusa gerar o site se o `CONFIG` divergir do que foi aprovado para essa versão: mudou preço, publique nova versão dos Termos e registre em `TERMOS_APROVADOS`.
 
 ## Pendências antes de publicar
 
-- [ ] (Futuro) Incluir razão social e CNPJ nas páginas Privacidade e Termos quando a empresa estiver definida
-- [ ] Revisar os preços quando o piloto validar os planos (hoje: Grátis + "a partir de R$ 149")
+- [x] Razão social, CNPJ e endereço (DJ KURTZ LTDA) em Privacidade, Termos e rodapé (14/10/2026)
+- [x] Planos Teste 14 dias / Mensal R$ 149 / Anual R$ 1.490 / por projeto (Termos versão 2026-10)
 
 ## Regras de comunicação (não negociáveis)
 

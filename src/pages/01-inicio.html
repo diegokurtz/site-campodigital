@@ -1,6 +1,7 @@
 ---
 caminho: /
 nav: inicio
+ref: site-inicio
 prioridade: 1.0
 titulo: Campo Digital | Agentes autônomos que trabalham pela operação do agro
 descricao: Agentes autônomos pelo WhatsApp para o agro. Sua equipe manda áudio, foto ou texto e o agente registra, confere, avisa e responde. Sem app novo, sem planilha.
@@ -15,7 +16,7 @@ descricao: Agentes autônomos pelo WhatsApp para o agro. Sua equipe manda áudio
         <a class="btn btn-wa" href="{{wa:Olá! Vim pelo site da Campo Digital e quero ver o agente funcionando.}}" target="_blank" rel="noopener">{{wa_svg}}Falar no WhatsApp</a>
         <a class="btn btn-linha" href="#como-funciona">Ver como funciona</a>
       </div>
-      <p class="nota">Conversa direta com quem constrói o agente. Sem fila de atendimento.</p>
+      <p class="nota">Teste grátis por {{cfg:teste_dias}} dias, sem cartão. Conversa direta com quem constrói o agente, sem fila de atendimento.</p>
     </div>
     <div class="celular" aria-label="Exemplo de conversa com o agente no WhatsApp">
       <div class="tela">
@@ -139,6 +140,7 @@ descricao: Agentes autônomos pelo WhatsApp para o agro. Sua equipe manda áudio
           <li>Financeiro da fazenda pelo WhatsApp</li>
           <li>Resumo às 06:00 e avisos de vencimento</li>
           <li>Preço do litro aberto item a item</li>
+          <li>{{cfg:teste_dias}} dias grátis, sem cartão</li>
         </ul>
         <span class="mais">Conhecer {{icone:seta}}</span>
       </a>
@@ -150,6 +152,7 @@ descricao: Agentes autônomos pelo WhatsApp para o agro. Sua equipe manda áudio
           <li>Leitura de secador e termometria por áudio</li>
           <li>Saldo por silo e valor do estoque</li>
           <li>Cotação diária de milho e soja</li>
+          <li>{{cfg:teste_dias}} dias grátis, sem cartão</li>
         </ul>
         <span class="mais">Conhecer {{icone:seta}}</span>
       </a>
@@ -167,6 +170,27 @@ descricao: Agentes autônomos pelo WhatsApp para o agro. Sua equipe manda áudio
         <a class="btn btn-escuro" href="/fazenda-digital/indicadores/">Leite {{icone:seta}}</a>
         <a class="btn btn-linha-escura" href="/armazem-digital/indicadores/">Armazém de grãos {{icone:seta}}</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="secao" id="cooperativas">
+  <div class="wrap faixa-projetos">
+    <div class="revela">
+      <span class="sobretitulo">Para cooperativas e grupos</span>
+      <h2>Várias unidades, um projeto só</h2>
+      <p class="lead">Cooperativas, laticínios, consultorias e grupos com várias fazendas ou armazéns contratam por projeto, com proposta própria.</p>
+      <ul class="lista-check">
+        <li>Um agente em cada unidade, no WhatsApp de cada equipe</li>
+        <li>Painel consolidado, com os números de todas as unidades lado a lado, desenhado no projeto</li>
+        <li>Implantação e treinamento das equipes feitos com a gente</li>
+      </ul>
+      <a class="btn btn-escuro" href="{{wa:Olá! Represento uma cooperativa ou grupo com várias unidades e quero falar com a equipe da Campo Digital. [ref:site-cooperativas]}}" target="_blank" rel="noopener">{{wa_svg}}Falar com a equipe</a>
+    </div>
+    <div class="fluxo revela">
+      <div class="passo claro"><span class="n">1</span><div><b>Conversa sobre as unidades</b><span>Quantas são, o que cada uma produz e quem precisa acompanhar o quê.</span></div></div>
+      <div class="passo claro"><span class="n">2</span><div><b>Proposta do projeto</b><span>Escopo, prazo e valor fechados antes de começar.</span></div></div>
+      <div class="passo claro"><span class="n">3</span><div><b>Implantação por etapas</b><span>Começa por uma unidade e expande para as demais.</span></div></div>
     </div>
   </div>
 </section>
@@ -221,9 +245,12 @@ descricao: Agentes autônomos pelo WhatsApp para o agro. Sua equipe manda áudio
       <details><summary>O que é um agente autônomo, na prática?</summary><p>É um assistente com inteligência artificial que não se limita a guardar o que você manda. Ele trabalha sozinho: organiza os registros, confere documentos, envia avisos e o resumo do dia, e responde perguntas sobre os seus números.</p></details>
       <details><summary>E se o agente entender errado?</summary><p>Toda anotação volta com uma confirmação. Se algo estiver errado, basta responder "corrige" com o valor certo. Quando o agente não entende ou não sabe a resposta, ele diz isso em vez de inventar.</p></details>
       <details><summary>Funciona com internet fraca no campo?</summary><p>Funciona como o WhatsApp funciona. Se a mensagem sair do celular quando o sinal voltar, o agente recebe e registra normalmente.</p></details>
-      <details><summary>Quem da equipe pode usar?</summary><p>Cada pessoa é cadastrada com o seu papel: proprietário, gestor, técnico, funcionário. Assim os avisos chegam para quem precisa agir.</p></details>
+      <details><summary>Quantas pessoas podem usar?</summary><p>O plano inclui {{cfg:usuarios_incluidos}} pessoas que lançam dados e mais {{cfg:leitores_max}} que só recebem o resumo, sem custo. Cada pessoa a mais que lança custa {{brl:preco_usuario_adicional}} por mês. Cada uma é cadastrada com o seu papel (proprietário, gestor, técnico, funcionário), para os avisos chegarem a quem precisa agir.</p></details>
       <details><summary>Meus dados ficam seguros?</summary><p>Os dados de cada cliente ficam separados, em servidor com acesso restrito, cópias de segurança periódicas e tratamento conforme a LGPD. Você pode pedir a exportação ou a exclusão a qualquer momento.</p></details>
-      <details><summary>Quanto custa?</summary><p>No leite, há um plano gratuito para começar e planos a partir de {{cfg:preco_fazenda_a_partir}} por mês por propriedade. Grãos e projetos sob medida são orçados conforme o porte. Detalhes na página de cada solução.</p></details>
+      <details><summary>Quanto custa?</summary><p>Você testa por {{cfg:teste_dias}} dias grátis, sem cartão. Depois, {{brl:preco_mensal}} por mês ou {{brl:preco_anual}} por ano (12 meses pelo preço de {{cfg:meses_cobrados_anual}}), por fazenda ou por armazém. Cooperativas, grupos com várias unidades e projetos sob medida são orçados por projeto.</p></details>
+      <details><summary>Preciso de cartão para testar?</summary><p>Não. O teste de {{cfg:teste_dias}} dias é grátis e sem cartão.</p></details>
+      <details><summary>Posso parcelar o anual?</summary><p>Sim, em até {{cfg:parcelas_max}}x no cartão. No Pix ou no boleto, o pagamento é à vista.</p></details>
+      <details><summary>Posso cancelar?</summary><p>O mensal, a qualquer momento. O anual tem 7 dias para desistir com devolução integral. Detalhes nos <a href="/termos/">Termos de uso e assinatura</a>.</p></details>
     </div>
   </div>
 </section>
