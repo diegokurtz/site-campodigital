@@ -24,7 +24,7 @@ CONFIG = {
     "whatsapp": "5548996373942",            # número comercial (só dígitos, com DDI)
     "whatsapp_legivel": "(48) 99637-3942",
     "ref_padrao": "site-inicio",             # origem anexada às mensagens do WhatsApp; páginas trocam com "ref:" no topo
-    # Planos (Termos de Uso e Assinatura versão 2026-10, aprovados em 14/10/2026)
+    # Planos (Termos de Uso e Assinatura versão 2026-10.2, aprovados pelo contador; vigentes em 16/10/2026)
     "preco_mensal": 149,
     "preco_anual": 1490,
     "teste_dias": 14,
@@ -32,8 +32,8 @@ CONFIG = {
     "usuarios_incluidos": 3,
     "preco_usuario_adicional": 29,
     "leitores_max": 3,
-    "termos_versao": "2026-10",
-    "termos_vigencia": "14/10/2026",
+    "termos_versao": "2026-10.2",
+    "termos_vigencia": "16/10/2026",
     # Empresa que fatura
     "razao_social": "DJ KURTZ LTDA",
     "razao_social_marca": "DJ Kurtz Ltda",
@@ -51,6 +51,8 @@ CONFIG["preco_usuario_adicional_anual"] = CONFIG["preco_usuario_adicional"] * CO
 TERMOS_APROVADOS = {
     "2026-10": {"preco_mensal": 149, "preco_anual": 1490, "teste_dias": 14, "parcelas_max": 4,
                 "usuarios_incluidos": 3, "preco_usuario_adicional": 29, "leitores_max": 3},
+    "2026-10.2": {"preco_mensal": 149, "preco_anual": 1490, "teste_dias": 14, "parcelas_max": 4,
+                  "usuarios_incluidos": 3, "preco_usuario_adicional": 29, "leitores_max": 3},
 }
 
 ICONES = {
