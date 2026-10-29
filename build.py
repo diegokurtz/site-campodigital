@@ -22,7 +22,10 @@ SRC, DIST = RAIZ / "src", RAIZ / "dist"
 CONFIG = {
     "dominio": "https://campodigital.com.br",
     "whatsapp": "5548996373942",            # número comercial (só dígitos, com DDI)
-    "whatsapp_legivel": "(48) 99637-3942",
+    "whatsapp_legivel": "(48) 99637-3942",   # comercial: fica só nos formulários de diagnóstico e na privacidade
+    "agente": "554891049665",               # 29/10: todos os botões do site abrem direto o agente
+    "agente_legivel": "(48) 9104-9665",
+    "agente_texto": "Oi",                   # mensagem pronta dos botões (o agente reconhece a origem pelo [ref:...])
     "ref_padrao": "site-inicio",             # origem anexada às mensagens do WhatsApp; páginas trocam com "ref:" no topo
     # Planos (Termos de Uso e Assinatura versão 2026-10.2, aprovados pelo contador; vigentes em 16/10/2026)
     "preco_mensal": 149,
@@ -101,9 +104,11 @@ def icone(nome):
 
 
 def wa(msg, ref=None):
-    if "[ref:" not in msg:
-        msg = f"{msg} [ref:{ref or CONFIG['ref_padrao']}]"
-    return f"https://wa.me/{CONFIG['whatsapp']}?text=" + urllib.parse.quote(msg)
+    # 29/10: todo botão vai para o agente com "Oi"; a mensagem da página só serve para dar o [ref:...]
+    m = re.search(r"\[ref:([^\]]+)\]", msg)
+    origem = m.group(1) if m else (ref or CONFIG["ref_padrao"])
+    texto = f"{CONFIG['agente_texto']} [ref:{origem}]"
+    return f"https://wa.me/{CONFIG['agente']}?text=" + urllib.parse.quote(texto)
 
 
 def brl(v, centavos=False):
@@ -228,7 +233,7 @@ def layout(meta, corpo):
         <ul>
           <li><a href="/#quem-somos">Quem somos</a></li>
           <li><a href="/#perguntas">Perguntas frequentes</a></li>
-          <li><a href="{html.escape(wa('Olá! Vim pelo site da Campo Digital.', ref), quote=True)}" target="_blank" rel="noopener">WhatsApp {CONFIG['whatsapp_legivel']}</a></li>
+          <li><a href="{html.escape(wa('Olá! Vim pelo site da Campo Digital.', ref), quote=True)}" target="_blank" rel="noopener">WhatsApp {CONFIG['agente_legivel']}</a></li>
         </ul>
       </div>
       <div>
