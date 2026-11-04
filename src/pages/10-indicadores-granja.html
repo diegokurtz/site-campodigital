@@ -1,0 +1,141 @@
+---
+caminho: /granja-digital/indicadores/
+prioridade: 0.5
+og: og-granja-digital.png
+titulo: Quais números mandam na sua granja de suínos? | Granja Digital
+descricao: Diagnóstico Granja Digital em 3 minutos: 12 indicadores, 1 toque cada. Respostas enviadas pelo WhatsApp.
+wa_topo: Olá! Quero entrar na lista de espera do Granja Digital.
+ref: site-granja
+sem_flutuante: sim
+classe_body: com-barra
+js: /assets/js/indicadores.js
+---
+<section class="hero hero-interna" style="padding:56px 0 60px">
+  <div class="wrap" style="grid-template-columns:1fr">
+    <div style="max-width:720px">
+      <span class="selo"><i></i>Granja Digital · diagnóstico em 3 minutos</span>
+      <h1>Quais números mandam na sua <em>granja de suínos</em>?</h1>
+      <p class="lead">São 12 itens, 1 toque cada, cerca de 3 minutos. Marque se o indicador é essencial, útil ou se vocês não usam. Com as suas respostas, mostramos pelo WhatsApp como o agente acompanharia esses números na sua rotina.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao-sm">
+  <div class="wrap">
+    <div class="form-ind">
+      <div class="quem-resp">
+        <input type="text" id="p-nome" placeholder="Seu nome" aria-label="Seu nome" autocomplete="name">
+        <input type="text" id="p-emp" placeholder="Granja / propriedade" aria-label="Granja / propriedade">
+      </div>
+      <div id="blocos"></div>
+      <div class="campo">
+        <label class="rot" for="p-falta">Faltou algum indicador importante? <small>(opcional)</small></label>
+        <input type="text" id="p-falta" placeholder="Ex.: custo da ração por quilo produzido">
+      </div>
+      <div class="campo">
+        <span class="rot">Quer testar por {{cfg:teste_dias}} dias quando abrir?</span>
+        <div class="chips" id="p-teste"></div>
+      </div>
+      <p class="rodape-form">As respostas não ficam guardadas em nenhum servidor: elas vão como mensagem de WhatsApp. Se o WhatsApp não abrir, toque em <button class="copiar" type="button" id="copiar">copiar respostas</button> e envie para {{cfg:whatsapp_legivel}}.</p>
+    </div>
+  </div>
+</section>
+
+<div class="barra-envio" role="region" aria-label="Enviar respostas">
+  <div class="in">
+    <div class="prog"><span id="progtxt">0 de 12 marcados</span><div class="trilho"><div class="preench" id="preench"></div></div></div>
+    <a class="btn btn-escuro" id="wa-envio" href="#" target="_blank" rel="noopener" aria-disabled="true">{{wa_svg}}Enviar pelo WhatsApp</a>
+  </div>
+</div>
+
+<script type="application/json" id="cfg-indicadores">
+{
+ "titulo": "Granja Digital · indicadores",
+ "chave": "granja-validacao-3min",
+ "whatsapp": "{{cfg:whatsapp}}",
+ "ref": "diag-granja",
+ "teste_dias": "{{cfg:teste_dias}}",
+ "blocos": [
+  {
+   "nome": "Lote e curva",
+   "itens": [
+    {
+     "id": 1,
+     "n": "Peso estimado para a idade",
+     "d": "com a faixa do normal"
+    },
+    {
+     "id": 2,
+     "n": "Ração por animal ao dia",
+     "d": "estimada para a idade"
+    },
+    {
+     "id": 3,
+     "n": "Conversão alimentar",
+     "d": "estimada e do lote"
+    }
+   ]
+  },
+  {
+   "nome": "Rotina do galpão",
+   "itens": [
+    {
+     "id": 4,
+     "n": "Mortalidade do dia e acumulada",
+     "d": "com a causa"
+    },
+    {
+     "id": 5,
+     "n": "Consumo real pelas notas de ração",
+     "d": "o que entrou no lote, nota a nota, contra o estimado"
+    },
+    {
+     "id": 6,
+     "n": "Pesagem do lote",
+     "d": "comparada com a faixa estimada"
+    }
+   ]
+  },
+  {
+   "nome": "Sanidade e saída",
+   "itens": [
+    {
+     "id": 7,
+     "n": "Carência calculada",
+     "d": "quem está em carência e até quando"
+    },
+    {
+     "id": 8,
+     "n": "Medicamentos e vacinas",
+     "d": "o que foi aplicado, em quantos animais e quando"
+    },
+    {
+     "id": 9,
+     "n": "Peso de saída",
+     "d": "conferido contra o estimado"
+    }
+   ]
+  },
+  {
+   "nome": "Fechamento e avisos",
+   "itens": [
+    {
+     "id": 10,
+     "n": "Fechamento do lote",
+     "d": "ganho por dia e conversão comparados"
+    },
+    {
+     "id": 11,
+     "n": "Resumo diário às 6h no WhatsApp",
+     "d": "peso, ração, saídas e carências"
+    },
+    {
+     "id": 12,
+     "n": "Avisos na hora",
+     "d": "mortalidade e saída com carência"
+    }
+   ]
+  }
+ ]
+}
+</script>

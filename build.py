@@ -181,7 +181,7 @@ def layout(meta, corpo):
 <meta property="og:title" content="{titulo}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{CONFIG['dominio']}/assets/img/og-campo-digital.png">
+<meta property="og:image" content="{CONFIG['dominio']}/assets/img/{meta.get('og', 'og-campo-digital.png')}">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/img/simbolo.svg" type="image/svg+xml">
@@ -226,6 +226,7 @@ def layout(meta, corpo):
         <ul>
           <li><a href="/fazenda-digital/indicadores/">Indicadores do leite</a></li>
           <li><a href="/armazem-digital/indicadores/">Indicadores do armazém</a></li>
+          <li><a href="/granja-digital/indicadores/">Indicadores da granja</a></li>
         </ul>
       </div>
       <div>

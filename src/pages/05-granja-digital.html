@@ -1,18 +1,19 @@
 ---
 caminho: /granja-digital/
 ref: site-granja
-prioridade: 0.7
+prioridade: 0.8
+og: og-granja-digital.png
 titulo: Granja Digital | Agente para suinocultura pelo WhatsApp | Campo Digital
-descricao: O agente da Campo Digital para suínos. Alojamento por áudio, ração pela foto da nota, mortalidade, pesagem contra a curva esperada, sanidade com carência e resumo diário. Lista de espera aberta.
+descricao: Você diz a idade do lote, o agente diz o peso estimado. Ração pela foto da nota, mortalidade, carência e resumo às 6h, tudo pelo WhatsApp. Lista de espera aberta.
 wa_topo: Olá! Quero entrar na lista de espera do Granja Digital.
 ---
 <section class="hero hero-interna">
   <div class="wrap">
     <div>
       <div class="marca-produto"><img src="/assets/img/simbolo.svg" alt=""><span>Granja<b>Digital</b><small>by Campo Digital</small></span></div>
-      <span class="selo"><i></i>Lista de espera · testes no início de dezembro</span>
-      <h1>A rotina da granja de suínos <em>acompanhada pelo WhatsApp</em>.</h1>
-      <p class="lead">O produtor e a equipe mandam áudio, texto ou foto, e o agente registra, calcula e avisa. Sem aplicativo novo, sem treinamento, sem planilha.</p>
+      <span class="selo"><i></i>Lista de espera aberta</span>
+      <h1>Você diz a idade do lote. <em>O agente diz o peso estimado.</em></h1>
+      <p class="lead">Peso, ração e conversão estimados para cada dia do lote, direto no WhatsApp, por texto, áudio ou foto. A referência vem de mais de 6 anos monitorando a produção.</p>
       <div class="acoes">
         <a class="btn btn-wa" href="{{wa:Olá! Quero entrar na lista de espera do Granja Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Entrar na lista de espera</a>
         <a class="btn btn-linha" href="#o-que-faz">O que o agente faz</a>
@@ -22,31 +23,10 @@ wa_topo: Olá! Quero entrar na lista de espera do Granja Digital.
       <div class="tela">
         <div class="wa-topo"><span class="avatar"><img src="/assets/img/simbolo.svg" alt=""></span><div><b>Agente Granja Digital</b><small>online</small></div></div>
         <div class="conversa">
-          <div class="balao meu"><div class="audio"><span class="play"></span><span class="onda"></span><small>0:07</small></div><div class="transc">"Alojei o lote 21 no galpão 1, 1.200 leitões com 24 quilos"</div><span class="hora">07:12</span></div>
-          <div class="balao dele">Confere?<br><b>Lote 21</b> · Galpão 1<br>Alojamento: <b>1.200 leitões</b><br>Peso médio de entrada: <b>24 kg</b><br>Data: <b>hoje</b><span class="hora">07:12</span></div>
-          <div class="balao meu">sim<span class="hora">07:13</span></div>
-          <div class="balao dele">Registrado. A partir de agora acompanho o lote 21 contra a curva esperada de peso, ração e conversão.<span class="hora">07:13</span></div>
-        </div>
-      </div>
-      <p class="ilustrativo" style="color:#A9BBA6">Conversa ilustrativa, com dados fictícios.</p>
-    </div>
-  </div>
-</section>
-
-<section class="secao creme-2">
-  <div class="wrap faixa-projetos">
-    <div class="revela">
-      <span class="sobretitulo">Curva de referência</span>
-      <h2>Você diz a idade, o agente diz o peso</h2>
-      <p class="lead">O produtor informa a idade ou os dias de alojado, e o agente devolve o peso esperado, a ração por dia e a conversão para aquele momento, com a faixa do que é normal.</p>
-      <p>A referência vem de mais de 6 anos monitorando a produção, com lotes acompanhados do alojamento ao abate e validados contra fechamentos reais. Vale para creche, terminação e wean to finish.</p>
-    </div>
-    <div class="celular revela">
-      <div class="tela">
-        <div class="wa-topo"><span class="avatar"><img src="/assets/img/simbolo.svg" alt=""></span><div><b>Agente Granja Digital</b><small>online</small></div></div>
-        <div class="conversa" style="min-height:0">
-          <div class="balao meu">quanto deve pesar o lote 21?<span class="hora">06:41</span></div>
-          <div class="balao dele"><b>Lote 21 · 45 dias de alojado</b><br><br>Peso esperado: <b>65 kg</b> (normal de 61 a 69 kg)<br>Ração por dia: <b>2,1 kg</b> por animal<br>Conversão acumulada: <b>2,25</b><br><br>Na última pesagem o lote estava dentro da faixa.<span class="hora">06:41</span></div>
+          <div class="balao meu"><div class="audio"><span class="play"></span><span class="onda"></span><small>0:08</small></div><div class="transc">"Alojei o lote 21 no galpão 1, 1.200 leitões, 24 quilos, machos"</div><span class="hora">07:12</span></div>
+          <div class="balao dele">Confere?<br><b>Lote 21</b> · Galpão 1 · machos<br>Alojamento: <b>1.200 leitões</b><br>Peso médio de entrada: <b>24 kg</b><span class="hora">07:12</span></div>
+          <div class="balao meu">quanto deve pesar o lote 21 hoje?<span class="hora">06:41</span></div>
+          <div class="balao dele"><b>Lote 21 · 45 dias de alojado</b><br>Peso estimado: <b>66 kg</b><br>Normal: de 62 a 70 kg<br>Ração por dia: <b>2,2 kg</b> por animal<span class="hora">06:41</span></div>
         </div>
       </div>
       <p class="ilustrativo" style="color:#A9BBA6">Conversa ilustrativa, com dados fictícios.</p>
@@ -57,37 +37,73 @@ wa_topo: Olá! Quero entrar na lista de espera do Granja Digital.
 <section class="secao" id="o-que-faz">
   <div class="wrap">
     <div class="cab revela">
-      <span class="sobretitulo">O que o agente faz hoje</span>
-      <h2>Do alojamento ao fechamento do lote, registrado na hora</h2>
+      <span class="sobretitulo">O que o agente faz</span>
+      <h2>A rotina do lote registrada na hora, com o estimado ao lado</h2>
       <p class="lead">Quem está no galpão não tem mão livre para planilha. Tem um celular e voz. É o suficiente.</p>
     </div>
     <div class="grade g3">
-      <div class="cartao revela"><div class="icone">{{icone:mic}}</div><h3>Alojamento por áudio</h3><p>"Alojei o lote 21 no galpão 1, 1.200 leitões com 24 kg." O agente confirma tudo por extenso e pergunta quando algo não fecha, como data impossível ou galpão já ocupado.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:camera}}</div><h3>Ração pela foto da nota</h3><p>Lê os quilos, a fase e os sacos da nota fiscal, recusa nota repetida e calcula o consumo do lote.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:sino}}</div><h3>Mortalidade com aviso na hora</h3><p>Do dia e acumulada, com a causa registrada. Passou do normal, quem precisa saber fica sabendo.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:grafico}}</div><h3>Pesagem contra a faixa esperada</h3><p>Cada pesagem é comparada com a curva de referência, com aviso quando o lote fica abaixo do normal.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:escudo}}</div><h3>Sanidade e carência</h3><p>Vacinas e tratamentos registrados, com a carência calculada e alerta se houver saída para abate com animal em carência.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:confere}}</div><h3>Fechamento do lote</h3><p>Ganho por dia e conversão do lote fechados a partir do que foi registrado ao longo do alojamento.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:pergunta}}</div><h3>Respostas na hora</h3><p>"Quanto deve pesar o lote 21?", "tem animal em carência?", "quanto de ração entrou?". Pergunte como perguntaria a uma pessoa.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:link}}</div><h3>Painel por link</h3><p>Sem senha e feito para o celular, com os lotes, os registros e as curvas organizados.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:pessoa}}</div><h3>A equipe toda na mesma granja</h3><p>Dono, gerente e tratador lançam cada um do próprio celular, e tudo cai na mesma granja.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:grafico}}</div><h3>O estimado para a idade</h3><p>Peso, ração e conversão estimados para cada dia, com a faixa do normal. Creche, terminação e wean to finish, com curvas para machos, fêmeas e misto, ajustadas ao peso de entrada.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:mic}}</div><h3>Texto, áudio ou foto</h3><p>Tudo pelo WhatsApp, do jeito que for mais fácil na hora. Lançou errado? CORRIGIR desfaz.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:camera}}</div><h3>Consumo real pelas notas</h3><p>Cada nota fiscal de ração recebida, fotografada, vira entrada no lote. O consumo real aparece ao lado do estimado.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:sino}}</div><h3>Mortalidade com aviso na hora</h3><p>Registrada com a causa. Quem precisa saber fica sabendo no mesmo momento.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:escudo}}</div><h3>Medicamentos e carência</h3><p>Vacinas, medicamentos e tratamentos lançados por áudio ou texto, com a carência calculada. Saída com carência aberta não passa sem aviso.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:confere}}</div><h3>Peso de saída conferido</h3><p>O peso informado na saída é comparado com o estimado. Um zero a mais ou a menos não passa despercebido.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:sol}}</div><h3>Resumo às 6h</h3><p>Peso estimado e ração por lote, saídas do dia e carências. Escreveu "detalha", recebe o resumo completo.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:link}}</div><h3>Painel por link</h3><p>Sem app e sem senha. O gráfico do lote contra a faixa estimada, aberto no celular.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:lista}}</div><h3>Fechamento do lote</h3><p>Ganho por dia e conversão do lote, comparados com lotes reais já fechados do mesmo sexo.</p></div>
     </div>
   </div>
 </section>
 
-<section class="secao escura">
+<section class="secao escura" id="consumo">
   <div class="wrap faixa-projetos">
     <div class="revela">
-      <span class="sobretitulo">Bom dia, produtor</span>
-      <h2>A granja inteira num resumo às 06:00</h2>
-      <p class="lead">Antes do primeiro trato, você já sabe como estão os lotes: mortalidade, ração que entrou, lotes fora da faixa e animais em carência.</p>
-      <p>No painel, os mesmos dados aparecem organizados por lote, para quem prefere ver em tela grande.</p>
+      <span class="sobretitulo">Consumo real</span>
+      <h2>O consumo do lote sai das notas que chegaram</h2>
+      <p class="lead">Cada nota fiscal de ração recebida vira entrada no lote. Basta fotografar a nota: o agente lê os quilos, a fase e os sacos, e soma ao que o lote já recebeu.</p>
+      <ul class="lista-check">
+        <li>Consumo real por animal ao dia, calculado a partir das notas e dos animais alojados</li>
+        <li>O real ao lado do estimado para a idade, para ver na hora se o lote está comendo dentro da faixa</li>
+        <li>Nota repetida é recusada, para o mesmo caminhão não entrar duas vezes</li>
+        <li>No fechamento, a conversão do lote vem do que foi de fato entregue</li>
+      </ul>
     </div>
     <div class="celular revela">
       <div class="tela">
         <div class="wa-topo"><span class="avatar"><img src="/assets/img/simbolo.svg" alt=""></span><div><b>Agente Granja Digital</b><small>online</small></div></div>
         <div class="conversa" style="min-height:0">
-          <div class="balao dele"><b>Bom dia! Resumo da granja</b><br><br><b>Lote 21</b> · 45 dias · 1.186 animais<br>Peso esperado hoje: 65 kg<br>Mortalidade acumulada: 1,2%<br>Ração recebida no lote: 98,4 t<br><br><b>Atenção</b><br>• 2 animais em carência até sexta<br>• Lote 21 sem pesagem há 14 dias<span class="hora">06:00</span></div>
+          <div class="balao meu"><div class="foto-doc"><i></i><i></i><i></i><i></i></div><div class="transc">Nota da ração, lote 21</div><span class="hora">15:20</span></div>
+          <div class="balao dele">Li a nota:<br><b>18.000 kg</b> de ração de terminação<br>Lançado no <b>lote 21</b>. Confere?<span class="hora">15:20</span></div>
+          <div class="balao meu">quanto de ração entrou no lote 21?<span class="hora">15:22</span></div>
+          <div class="balao dele"><b>Lote 21 · 45 dias de alojado</b><br>Notas recebidas: <b>5</b>, somando <b>92.900 kg</b><br>Consumo real: <b>1,72 kg</b> por animal ao dia<br>Estimado para a idade: <b>1,75 kg</b><br>Dentro da faixa.<span class="hora">15:22</span></div>
+        </div>
+      </div>
+      <p class="ilustrativo" style="color:#A9BBA6">Conversa ilustrativa, com dados fictícios.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao" id="sanidade">
+  <div class="wrap faixa-projetos">
+    <div class="revela">
+      <span class="sobretitulo">Sanidade</span>
+      <h2>Medicamentos lançados na hora, carência calculada sozinha</h2>
+      <p class="lead">Vacinas, medicamentos e tratamentos entram por áudio ou texto, do jeito que foi feito no galpão. Para cada lançamento, o agente calcula até quando vai a carência.</p>
+      <ul class="lista-check">
+        <li>Histórico sanitário do lote: o que foi aplicado, em quantos animais e quando</li>
+        <li>Carência aberta no resumo das 6h, com a data em que termina</li>
+        <li>Antes de uma saída para abate com carência aberta, o agente pergunta e avisa</li>
+        <li>Pergunte quando quiser: "tem animal em carência?"</li>
+      </ul>
+    </div>
+    <div class="celular revela">
+      <div class="tela">
+        <div class="wa-topo"><span class="avatar"><img src="/assets/img/simbolo.svg" alt=""></span><div><b>Agente Granja Digital</b><small>online</small></div></div>
+        <div class="conversa" style="min-height:0">
+          <div class="balao meu"><div class="audio"><span class="play"></span><span class="onda"></span><small>0:06</small></div><div class="transc">"Tratei 30 animais do lote 21 com antibiótico, carência de 21 dias"</div><span class="hora">08:05</span></div>
+          <div class="balao dele">Registrado:<br><b>Lote 21</b> · 30 animais tratados<br>Medicamento: antibiótico<br>Carência até <b>25/11</b><span class="hora">08:05</span></div>
+          <div class="balao meu">amanhã carrego 200 do lote 21<span class="hora">17:30</span></div>
+          <div class="balao dele"><span class="alerta-tag">Atenção</span><br>O <b>lote 21</b> tem <b>30 animais em carência até 25/11</b>. Esses animais estão fora da carga de amanhã?<span class="hora">17:30</span></div>
         </div>
       </div>
       <p class="ilustrativo" style="color:#A9BBA6">Conversa ilustrativa, com dados fictícios.</p>
@@ -98,29 +114,97 @@ wa_topo: Olá! Quero entrar na lista de espera do Granja Digital.
 <section class="secao creme-2">
   <div class="wrap">
     <div class="cab revela">
-      <span class="sobretitulo">Para quem e o que vem a seguir</span>
-      <h2>Feito para quem vive a rotina da suinocultura</h2>
+      <span class="sobretitulo">De onde vem o estimado</span>
+      <h2>Lotes de verdade, do alojamento ao abate</h2>
+      <p class="lead">A faixa que o agente usa não é tabela de livro. Vem de mais de 6 anos monitorando a produção, com lotes acompanhados do alojamento ao abate e conferidos contra os fechamentos reais.</p>
     </div>
     <div class="grade g3">
-      <div class="passo claro revela"><span class="n">{{icone:pessoa}}</span><div><b>Para quem é</b><span>Produtores integrados e independentes a partir de 1.000 animais alojados, técnicos de campo e integradoras.</span></div></div>
-      <div class="passo claro revela"><span class="n">{{icone:engrenagem}}</span><div><b>Em desenvolvimento</b><span>Leitura do romaneio de abate, da NF de medicamentos, da GTA e da ficha da integradora, e curvas por macho, fêmea e misto.</span></div></div>
-      <div class="passo claro revela"><span class="n">{{icone:relogio}}</span><div><b>Lançamento</b><span>Lista de espera aberta, com os primeiros testes previstos para o início de dezembro. Quem está na lista tem prioridade.</span></div></div>
+      <div class="passo claro revela"><span class="n">1</span><div><b>Histórico real</b><span>Lotes acompanhados dia a dia, do alojamento até a saída para abate.</span></div></div>
+      <div class="passo claro revela"><span class="n">2</span><div><b>Conferido no fechamento</b><span>O que foi medido ao longo do lote foi comparado com o que fechou de fato.</span></div></div>
+      <div class="passo claro revela"><span class="n">3</span><div><b>Por fase e por sexo</b><span>Creche, terminação e wean to finish, com curvas para machos, fêmeas e misto.</span></div></div>
     </div>
   </div>
 </section>
 
-<section class="secao" id="planos">
+<section class="secao">
+  <div class="wrap">
+    <div class="cab revela">
+      <span class="sobretitulo">Para quem</span>
+      <h2>Para quem vive a rotina da suinocultura</h2>
+    </div>
+    <div class="grade g2">
+      <div class="cartao revela"><div class="icone">{{icone:pessoa}}</div><h3>Produtor integrado ou independente</h3><p>A partir de 1.000 animais alojados. Contrata direto, com {{cfg:teste_dias}} dias de teste quando abrir.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:engrenagem}}</div><h3>Técnico de campo e integradora</h3><p>Para acompanhar várias granjas, a conversa é por projeto, desenhada com a sua equipe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="secao creme-2" id="planos">
   <div class="wrap">
     <div class="cab centro revela">
       <span class="sobretitulo">Planos</span>
-      <h2>A partir de {{brl:preco_mensal}} por mês</h2>
-      <p class="lead">Com {{cfg:teste_dias}} dias de teste grátis, sem cartão, para ver o agente na rotina da sua granja antes de decidir. Integradoras e grupos com várias granjas recebem proposta própria.</p>
-      <div class="acoes" style="justify-content:center">
-        <a class="btn btn-wa" href="{{wa:Olá! Quero entrar na lista de espera do Granja Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Entrar na lista de espera</a>
-        <a class="btn btn-linha-escura" href="{{wa:Olá! Represento uma integradora e quero falar com a equipe sobre o Granja Digital. [ref:site-cooperativas]}}" target="_blank" rel="noopener">Sou integradora</a>
+      <h2>Os mesmos planos do Fazenda Digital</h2>
+      <p class="lead">Preço por granja, com {{cfg:usuarios_incluidos}} usuários incluídos. O teste de {{cfg:teste_dias}} dias abre para quem estiver na lista de espera.</p>
+    </div>
+    <div class="precos p4">
+      <div class="plano revela">
+        <span class="nome">Teste</span>
+        <div class="valor">R$ 0<small>/{{cfg:teste_dias}} dias</small></div>
+        <p class="desc">Para ver o agente na rotina da granja antes de decidir.</p>
+        <ul>
+          <li>Tudo do plano Mensal durante o teste</li>
+          <li>Sem cartão e sem cobrança</li>
+          <li>Quem está na lista é avisado primeiro</li>
+        </ul>
+        <a class="btn btn-linha-escura" href="{{wa:Olá! Quero entrar na lista de espera do Granja Digital.}}" target="_blank" rel="noopener">Entrar na lista</a>
+      </div>
+      <div class="plano destaque-plano revela">
+        <span class="nome">Mensal</span>
+        <div class="valor">{{brl:preco_mensal}}<small>/mês</small></div>
+        <p class="desc">Para ter os lotes da granja acompanhados no agente.</p>
+        <ul>
+          <li>Estimado de peso, ração e conversão por idade</li>
+          <li>Consumo real pelas notas de ração</li>
+          <li>Medicamentos, carência e mortalidade</li>
+          <li>Resumo às 6h e painel por link</li>
+          <li>Fechamento do lote comparado</li>
+          <li>{{cfg:usuarios_incluidos}} usuários incluídos</li>
+        </ul>
+        <a class="btn btn-wa" href="{{wa:Olá! Quero entrar na lista de espera do Granja Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Entrar na lista</a>
+      </div>
+      <div class="plano revela">
+        <span class="nome">Anual</span>
+        <div class="valor"><span class="de">12 meses pelo preço de {{cfg:meses_cobrados_anual}}</span>{{brl:preco_anual}}<small>/ano</small></div>
+        <p class="desc">Tudo do plano Mensal, pagando {{cfg:meses_cobrados_anual}} meses por ano.</p>
+        <ul>
+          <li>Pix ou boleto, à vista</li>
+          <li>Ou em até {{cfg:parcelas_max}}x no cartão</li>
+          <li>{{cfg:usuarios_incluidos}} usuários incluídos</li>
+        </ul>
+        <a class="btn btn-linha-escura" href="{{wa:Olá! Quero entrar na lista de espera do Granja Digital.}}" target="_blank" rel="noopener">Entrar na lista</a>
+      </div>
+      <div class="plano revela">
+        <span class="nome">Técnico ou integradora</span>
+        <div class="valor" style="font-size:1.6rem">Por projeto</div>
+        <p class="desc">Para quem acompanha várias granjas.</p>
+        <ul>
+          <li>Proposta conforme o número de granjas</li>
+          <li>Painel consolidado desenhado no projeto</li>
+          <li>Implantação e treinamento da equipe</li>
+        </ul>
+        <a class="btn btn-linha-escura" href="{{wa:Olá! Quero falar com a equipe sobre o Granja Digital para várias granjas. [ref:site-cooperativas]}}" target="_blank" rel="noopener">Falar com a equipe</a>
       </div>
     </div>
-    <p class="precos-nota">Valores sem impostos adicionais. Condições completas nos <a href="/termos/">Termos de uso e assinatura</a>.</p>
+    <p class="precos-nota">Usuário adicional, além dos {{cfg:usuarios_incluidos}} incluídos: {{brl:preco_usuario_adicional}} por mês. Valores sem impostos adicionais. Condições completas nos <a href="/termos/">Termos de uso e assinatura</a>.</p>
+  </div>
+</section>
+
+<section class="secao-sm">
+  <div class="wrap">
+    <div class="chamada-form revela">
+      <div><span class="sobretitulo">Diagnóstico em 3 minutos</span><h3>Quais números mandam na sua granja?</h3><p>Marque os indicadores que importam e receba pelo WhatsApp como o agente acompanharia esses números na sua rotina.</p></div>
+      <a class="btn btn-escuro" href="/granja-digital/indicadores/">Fazer o diagnóstico {{icone:seta}}</a>
+    </div>
   </div>
 </section>
 
@@ -128,11 +212,11 @@ wa_topo: Olá! Quero entrar na lista de espera do Granja Digital.
   <div class="wrap">
     <div class="cab centro revela"><span class="sobretitulo">Perguntas</span><h2>Dúvidas sobre o Granja Digital</h2></div>
     <div class="faq">
-      <details><summary>Preciso instalar sensores ou balança?</summary><p>Não. O agente trabalha com o que a sua equipe já registra, informado por áudio, texto ou foto no WhatsApp.</p></details>
-      <details><summary>Serve para creche, terminação e wean to finish?</summary><p>Sim. A curva de referência cobre as três fases, e o agente usa a idade ou os dias de alojado do lote para saber o que esperar.</p></details>
-      <details><summary>Sou integrado. Funciona com a minha integradora?</summary><p>Funciona. O agente organiza a rotina da sua granja independentemente da integradora. A leitura da ficha da integradora está em desenvolvimento.</p></details>
-      <details><summary>De onde vem a curva de peso esperado?</summary><p>De mais de 6 anos monitorando a produção, com lotes acompanhados do alojamento ao abate e validados contra fechamentos reais.</p></details>
-      <details><summary>Quando posso começar?</summary><p>Os primeiros testes estão previstos para o início de dezembro. Entre na lista de espera para ter prioridade.</p></details>
+      <details><summary>Preciso ter balança?</summary><p>Não. O agente trabalha com a idade do lote e o peso de entrada. A pesagem é opcional: quando você informa, a leitura do lote fica ainda melhor.</p></details>
+      <details><summary>Funciona com sinal fraco no galpão?</summary><p>Funciona. Áudio e foto ficam no WhatsApp e chegam ao agente assim que o sinal volta.</p></details>
+      <details><summary>Quem vê os dados da minha granja?</summary><p>Só os números que você autorizar. Os dados são da granja, não são vendidos nem compartilhados, e o tratamento segue a <a href="/privacidade/">política de privacidade</a>.</p></details>
+      <details><summary>Sou integrado. Também posso usar?</summary><p>Pode. O agente organiza a rotina da sua granja e você contrata direto, independentemente da integradora.</p></details>
+      <details><summary>Quando posso começar?</summary><p>Entre na lista de espera pelo WhatsApp. Quando o teste abrir, quem está na lista é avisado primeiro.</p></details>
     </div>
   </div>
 </section>
@@ -140,7 +224,7 @@ wa_topo: Olá! Quero entrar na lista de espera do Granja Digital.
 <section class="secao escura cta-final">
   <div class="wrap revela">
     <h2>Quer a sua granja entre as primeiras?</h2>
-    <p class="lead">Conte quantos animais aloja, em qual fase trabalha e como a equipe registra a rotina hoje. Os primeiros testes começam no início de dezembro.</p>
+    <p class="lead">Entre na lista de espera e conte quantos animais aloja e em qual fase trabalha. Avisamos assim que o teste de {{cfg:teste_dias}} dias abrir.</p>
     <div class="acoes"><a class="btn btn-wa" href="{{wa:Olá! Quero entrar na lista de espera do Granja Digital.}}" target="_blank" rel="noopener">{{wa_svg}}Entrar na lista de espera</a></div>
   </div>
 </section>
