@@ -94,6 +94,7 @@ NAV = [
     ("/", "Início", "inicio"),
     ("/fazenda-digital/", "Fazenda Digital", "fazenda"),
     ("/armazem-digital/", "Armazém Digital", "armazem"),
+    ("/granja-digital/", "Granja Digital", "granja"),
     ("/projetos/", "Projetos sob medida", "projetos"),
     ("/#quem-somos", "Quem somos", "quem"),
 ]
