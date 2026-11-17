@@ -220,7 +220,7 @@ def layout(meta, corpo):
         <ul>
           <li><a href="/fazenda-digital/">Fazenda Digital (leite)</a></li>
           <li><a href="/armazem-digital/">Armazém Digital (grãos)</a></li>
-          <li><a href="/granja-digital/">Granja Digital (lista de espera)</a></li>
+          <li><a href="/granja-digital/">Granja Digital (suínos)</a></li>
           <li><a href="/projetos/">Projetos sob medida</a></li>
         </ul>
         <h4 style="margin-top:22px">Diagnóstico rápido</h4>

@@ -4,7 +4,7 @@ prioridade: 0.5
 og: og-granja-digital.png
 titulo: Quais números mandam na sua granja de suínos? | Granja Digital
 descricao: Diagnóstico Granja Digital em 3 minutos: 12 indicadores, 1 toque cada. Respostas enviadas pelo WhatsApp.
-wa_topo: Olá! Quero entrar na lista de espera do Granja Digital.
+wa_topo: Quero testar a Granja Digital [ref:site-granja]
 ref: site-granja
 sem_flutuante: sim
 classe_body: com-barra
@@ -33,7 +33,7 @@ js: /assets/js/indicadores.js
         <input type="text" id="p-falta" placeholder="Ex.: custo da ração por quilo produzido">
       </div>
       <div class="campo">
-        <span class="rot">Quer testar por {{cfg:teste_dias}} dias quando abrir?</span>
+        <span class="rot">Quer começar o teste de {{cfg:teste_dias}} dias agora?</span>
         <div class="chips" id="p-teste"></div>
       </div>
       <p class="rodape-form">As respostas não ficam guardadas em nenhum servidor: elas vão como mensagem de WhatsApp. Se o WhatsApp não abrir, toque em <button class="copiar" type="button" id="copiar">copiar respostas</button> e envie para {{cfg:whatsapp_legivel}}.</p>
@@ -51,7 +51,7 @@ js: /assets/js/indicadores.js
 <script type="application/json" id="cfg-indicadores">
 {
  "titulo": "Granja Digital · indicadores",
- "chave": "granja-validacao-3min",
+ "chave": "granja-validacao-3min-v2",
  "whatsapp": "{{cfg:whatsapp}}",
  "ref": "diag-granja",
  "teste_dias": "{{cfg:teste_dias}}",
@@ -72,7 +72,7 @@ js: /assets/js/indicadores.js
     {
      "id": 3,
      "n": "Conversão alimentar",
-     "d": "estimada e do lote"
+     "d": "estimada para a idade"
     }
    ]
   },
@@ -86,8 +86,8 @@ js: /assets/js/indicadores.js
     },
     {
      "id": 5,
-     "n": "Consumo real pelas notas de ração",
-     "d": "o que entrou no lote, nota a nota, contra o estimado"
+     "n": "Ração entregue pelas notas",
+     "d": "nota de ração por foto, entregue por animal"
     },
     {
      "id": 6,
@@ -97,7 +97,7 @@ js: /assets/js/indicadores.js
    ]
   },
   {
-   "nome": "Sanidade e saída",
+   "nome": "Sanidade e avisos",
    "itens": [
     {
      "id": 7,
@@ -106,33 +106,33 @@ js: /assets/js/indicadores.js
     },
     {
      "id": 8,
-     "n": "Medicamentos e vacinas",
-     "d": "o que foi aplicado, em quantos animais e quando"
+     "n": "Vacinas e tratamentos",
+     "d": "o que foi aplicado, em quantos animais e quando; nota de remédios por foto"
     },
     {
      "id": 9,
-     "n": "Peso de saída",
-     "d": "conferido contra o estimado"
+     "n": "Avisos na hora",
+     "d": "mortalidade e saída para abate com carência aberta"
     }
    ]
   },
   {
-   "nome": "Fechamento e avisos",
+   "nome": "Custos, resultado e resumo",
    "itens": [
     {
      "id": 10,
-     "n": "Fechamento do lote",
-     "d": "ganho por dia e conversão comparados"
+     "n": "Custos por tipo e por mês",
+     "d": "luz, mão de obra, combustível, ração e remédios comprados"
     },
     {
      "id": 11,
-     "n": "Resumo diário às 6h no WhatsApp",
-     "d": "peso, ração, saídas e carências"
+     "n": "Resultado do lote",
+     "d": "receita menos os custos, pela ficha de acerto"
     },
     {
      "id": 12,
-     "n": "Avisos na hora",
-     "d": "mortalidade e saída com carência"
+     "n": "Resumo diário às 6h no WhatsApp",
+     "d": "peso estimado, ração e custos por lote"
     }
    ]
   }
