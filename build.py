@@ -6,6 +6,7 @@ Tudo que muda com frequência (WhatsApp, preços, domínio) está em CONFIG abai
 Cada página em src/pages/*.html começa com um bloco de metadados entre linhas '---'.
 Marcadores aceitos no conteúdo:
   {{wa:Mensagem pronta}}  -> link wa.me com a mensagem já preenchida e a origem [ref:...] da página
+  {{wa_texto:Mensagem}}   -> link wa.me do agente com a mensagem exatamente como escrita
                              (se a mensagem já tiver [ref:...], vale a dela)
   {{icone:nome}}          -> ícone SVG em linha
   {{cfg:chave}}           -> valor de CONFIG
@@ -122,6 +123,9 @@ def expandir(txt, ref=None):
     txt = re.sub(r"\{\{cfg:(\w+)\}\}", lambda m: str(CONFIG[m.group(1)]), txt)
     txt = re.sub(r"\{\{brl:(\w+)\}\}", lambda m: brl(CONFIG[m.group(1)]), txt)
     txt = re.sub(r"\{\{brl2:(\w+)\}\}", lambda m: brl(CONFIG[m.group(1)], centavos=True), txt)
+    # 23/11: {{wa_texto:...}} manda a mensagem exatamente como escrita (CTA da Granja)
+    txt = re.sub(r"\{\{wa_texto:(.+?)\}\}", lambda m: html.escape(
+        f"https://wa.me/{CONFIG['agente']}?text=" + urllib.parse.quote(m.group(1)), quote=True), txt)
     txt = re.sub(r"\{\{wa:(.+?)\}\}", lambda m: html.escape(wa(m.group(1), ref), quote=True), txt)
     txt = re.sub(r"\{\{icone:(\w+)\}\}", lambda m: icone(m.group(1)), txt)
     txt = txt.replace("{{wa_svg}}", WA_SVG)
