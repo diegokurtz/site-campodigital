@@ -5,7 +5,7 @@ ref: site-granja
 prioridade: 0.8
 og: og-granja-digital.png
 titulo: Granja Digital | Agente para suinocultura pelo WhatsApp | Campo Digital
-descricao: Você diz a idade do lote, o agente diz o peso estimado. Ração e remédios pela foto da nota, mortalidade, carência e resumo às 6h, tudo pelo WhatsApp. Teste grátis de 14 dias, sem cartão.
+descricao: Você diz a idade do lote, o agente diz o peso estimado. Ração no silo e até quando pedir, hora de abater, nota por foto, carência e resumo às 6h, tudo pelo WhatsApp. Teste grátis de 14 dias, sem cartão.
 wa_topo: Quero testar a Granja Digital [ref:site-granja]
 ---
 <section class="hero hero-interna">
@@ -16,7 +16,7 @@ wa_topo: Quero testar a Granja Digital [ref:site-granja]
       <h1>Você diz a idade do lote. <em>O agente diz o peso estimado.</em></h1>
       <p class="lead">Peso, ração e conversão estimados para cada dia do lote, direto no WhatsApp, por texto, áudio ou foto. A referência vem de mais de 6 anos monitorando a produção.</p>
       <div class="acoes">
-        <a class="btn btn-wa" href="{{wa:Quero testar a Granja Digital [ref:site-granja]}}" target="_blank" rel="noopener">{{wa_svg}}Começar o teste grátis</a>
+        <a class="btn btn-wa" href="{{wa_texto:Quero testar a Granja Digital [ref:site-granja]}}" target="_blank" rel="noopener">{{wa_svg}}Começar o teste grátis</a>
         <a class="btn btn-linha" href="#como-funciona">Ver como funciona</a>
       </div>
       <p class="nota">{{cfg:teste_dias}} dias grátis, sem cartão. Do "oi" ao primeiro lote alojado em cerca de 5 mensagens.</p>
@@ -44,15 +44,16 @@ wa_topo: Quero testar a Granja Digital [ref:site-granja]
       <p class="lead">Quem está no galpão não tem mão livre para planilha. Tem um celular e voz. É o suficiente.</p>
     </div>
     <div class="grade g4">
-      <div class="cartao revela"><div class="icone">{{icone:relogio}}</div><h3>Começo rápido</h3><p>Do "oi" ao primeiro lote alojado em cerca de 5 mensagens. O agente pergunta só o necessário.</p></div>
       <div class="cartao revela"><div class="icone">{{icone:grafico}}</div><h3>O estimado para a idade</h3><p>Peso, ração e conversão estimados para cada dia, com faixa. Creche, terminação e wean to finish, com curvas por sexo, ajustadas ao peso de entrada.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:mic}}</div><h3>Texto, áudio ou foto</h3><p>Para lançar e para perguntar: "quanto tá pesando o lote?". Lançou errado? CORRIGIR desfaz.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:mic}}</div><h3>Pergunte do seu jeito</h3><p>Texto, áudio ou foto. "Quanto meu lote vai pesar daqui a 30 dias?", "quando ele chega a 130 kg?", "quanto vai comer até o abate?". Lançou errado? CORRIGIR desfaz.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:silo}}</div><h3>Ração no silo e quando pedir</h3><p>Diga o saldo do silo e o agente mostra quanto o lote comeu, por animal, quando a ração acaba e até quando pedir, contando os dias de entrega da fábrica.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:relogio}}</div><h3>Hora de abater</h3><p>"Devo abater com 110 dias?" tem resposta direta, com o seu peso de abate: "Ainda não: aos 110 dias ele deve estar com uns 126 kg; chega aos 130 kg por volta do dia 114."</p></div>
       <div class="cartao revela"><div class="icone">{{icone:camera}}</div><h3>Nota por foto</h3><p>Fotografe a nota de ração ou de remédios. O agente lê e lança no lote, e a ração entregue por animal aparece na hora.</p></div>
       <div class="cartao revela"><div class="icone">{{icone:dinheiro}}</div><h3>Custos e resultado do lote, se você quiser</h3><p>Luz, mão de obra, combustível, ração e remédios comprados, somados por mês. A ficha de acerto por foto fecha o lote com o resultado.</p></div>
       <div class="cartao revela"><div class="icone">{{icone:escudo}}</div><h3>Mortalidade e carência</h3><p>Mortalidade com aviso e causa. Vacinas e tratamentos com a carência calculada, e aviso antes de uma saída para abate com carência aberta.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:sol}}</div><h3>Resumo às 6h</h3><p>Peso estimado, ração e custos por lote, todo dia cedo. Respondeu "ok", recebe o resumo completo.</p></div>
-      <div class="cartao revela"><div class="icone">{{icone:link}}</div><h3>Painel por link</h3><p>Sem app e sem senha. Lotes, gráficos de peso e ração contra a faixa estimada, e custos e receitas mês a mês.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:sol}}</div><h3>Resumo às 6h e painel</h3><p>Peso estimado, ração, silo e custos por lote, todo dia cedo. Responda o resumo para o agente detalhar qualquer número, ou escreva PAINEL para os gráficos, sem app e sem senha.</p></div>
     </div>
+    <p class="limites revela"><b>Ainda não faço:</b> preço do suíno, formulação de ração e diagnóstico de doença.</p>
   </div>
 </section>
 
@@ -66,9 +67,10 @@ wa_topo: Quero testar a Granja Digital [ref:site-granja]
         <li>Alojou? Diga quantos animais, o galpão e o peso médio de entrada</li>
         <li>Chegou ração? Foto da nota, e o agente lança no lote</li>
         <li>Quer saber como está? Pergunte por áudio, a qualquer hora</li>
+        <li>Diga o saldo do silo e saiba até quando pedir ração</li>
         <li>Todo dia às 6h, o resumo de cada lote chega sozinho</li>
       </ul>
-      <a class="btn btn-wa" href="{{wa:Quero testar a Granja Digital [ref:site-granja]}}" target="_blank" rel="noopener">{{wa_svg}}Começar o teste grátis</a>
+      <a class="btn btn-wa" href="{{wa_texto:Quero testar a Granja Digital [ref:site-granja]}}" target="_blank" rel="noopener">{{wa_svg}}Começar o teste grátis</a>
     </div>
     <div class="celular revela">
       <div class="tela">
@@ -82,7 +84,10 @@ wa_topo: Quero testar a Granja Digital [ref:site-granja]
           <span class="data-chip">16 de novembro</span>
           <div class="balao meu"><div class="audio"><span class="play"></span><span class="onda"></span><small>0:03</small></div><div class="transc">"Quanto tá pesando o lote?"</div><span class="hora">06:41</span></div>
           <div class="balao dele"><b>Galpão 1 · 45 dias de alojado</b><br>Peso estimado: <b>65 kg</b><br>Faixa: de 61 a 69 kg<span class="hora">06:41</span></div>
-          <div class="balao dele"><b>Resumo das 6h</b><br>Galpão 1 · 45 dias · 593 animais<br>Peso estimado: <b>65 kg</b><br>Ração: <b>2,1 kg</b> por animal ao dia<br>Custos do mês: <b>R$ 3.180</b><br>Responda ok para o resumo completo.<span class="hora">06:00</span></div>
+          <div class="balao dele"><b>Resumo das 6h</b><br>Galpão 1 · 45 dias · 593 animais<br>Peso estimado: <b>65 kg</b><br>Ração: <b>2,1 kg</b> por animal ao dia<br>Custos do mês: <b>R$ 3.180</b><br>Responda este resumo para eu detalhar qualquer número.<span class="hora">06:00</span></div>
+          <div class="balao meu">silo do galpão 1 com 10 toneladas<span class="hora">06:52</span></div>
+          <div class="balao meu">quando tenho que pedir ração?<span class="hora">06:52</span></div>
+          <div class="balao dele">Com 10 t no silo e o lote comendo uns <b>1,25 t por dia</b>, a ração acaba por volta de <b>24/11</b>.<br>Contando a entrega da fábrica, <b>peça até 20/11</b>.<span class="hora">06:53</span></div>
         </div>
       </div>
       <p class="ilustrativo" style="color:#A9BBA6">Conversa ilustrativa, com dados fictícios.</p>
@@ -142,7 +147,7 @@ wa_topo: Quero testar a Granja Digital [ref:site-granja]
       <h2>Para quem vive a rotina da suinocultura</h2>
     </div>
     <div class="grade g2">
-      <div class="cartao revela"><div class="icone">{{icone:pessoa}}</div><h3>Produtor integrado ou independente</h3><p>A partir de 1.000 animais alojados. Contrata direto e começa hoje, com {{cfg:teste_dias}} dias grátis, sem cartão.</p></div>
+      <div class="cartao revela"><div class="icone">{{icone:pessoa}}</div><h3>Produtor integrado ou independente</h3><p>De qualquer tamanho: toda granja começa o teste. Contrata direto e começa hoje, com {{cfg:teste_dias}} dias grátis, sem cartão.</p></div>
       <div class="cartao revela"><div class="icone">{{icone:engrenagem}}</div><h3>Técnico de campo e integradora</h3><p>Para acompanhar várias granjas, a conversa é por projeto, desenhada com a sua equipe.</p><p><a class="btn btn-linha-escura" href="{{wa:Olá! Quero falar com a equipe sobre o Granja Digital para várias granjas. [ref:site-cooperativas]}}" target="_blank" rel="noopener">Falar com a equipe</a></p></div>
     </div>
   </div>
@@ -165,7 +170,7 @@ wa_topo: Quero testar a Granja Digital [ref:site-granja]
           <li>Sem cartão e sem cobrança</li>
           <li>No fim, você escolhe o plano ou a conta fica só para consulta</li>
         </ul>
-        <a class="btn btn-linha-escura" href="{{wa:Quero testar a Granja Digital [ref:site-granja]}}" target="_blank" rel="noopener">Começar o teste grátis</a>
+        <a class="btn btn-linha-escura" href="{{wa_texto:Quero testar a Granja Digital [ref:site-granja]}}" target="_blank" rel="noopener">Começar o teste grátis</a>
       </div>
       <div class="plano destaque-plano revela">
         <span class="nome">Mensal</span>
@@ -173,13 +178,14 @@ wa_topo: Quero testar a Granja Digital [ref:site-granja]
         <p class="desc">Para ter os lotes da granja acompanhados no agente.</p>
         <ul>
           <li>Peso, ração e conversão estimados para a idade</li>
+          <li>Ração no silo, até quando pedir e hora de abater</li>
           <li>Nota de ração e de remédios por foto</li>
           <li>Mortalidade, vacinas e carência</li>
           <li>Custos e resultado do lote, se quiser</li>
           <li>Resumo às 6h e painel por link</li>
           <li>{{cfg:usuarios_incluidos}} usuários incluídos</li>
         </ul>
-        <a class="btn btn-wa" href="{{wa:Quero testar a Granja Digital [ref:site-granja]}}" target="_blank" rel="noopener">{{wa_svg}}Começar o teste grátis</a>
+        <a class="btn btn-wa" href="{{wa_texto:Quero testar a Granja Digital [ref:site-granja]}}" target="_blank" rel="noopener">{{wa_svg}}Começar o teste grátis</a>
       </div>
       <div class="plano revela">
         <span class="nome">Anual</span>
@@ -190,7 +196,7 @@ wa_topo: Quero testar a Granja Digital [ref:site-granja]
           <li>Ou em até {{cfg:parcelas_max}}x no cartão</li>
           <li>{{cfg:usuarios_incluidos}} usuários incluídos</li>
         </ul>
-        <a class="btn btn-linha-escura" href="{{wa:Quero testar a Granja Digital [ref:site-granja]}}" target="_blank" rel="noopener">Começar o teste grátis</a>
+        <a class="btn btn-linha-escura" href="{{wa_texto:Quero testar a Granja Digital [ref:site-granja]}}" target="_blank" rel="noopener">Começar o teste grátis</a>
       </div>
       <div class="plano revela">
         <span class="nome">Técnico ou integradora</span>
@@ -225,6 +231,7 @@ wa_topo: Quero testar a Granja Digital [ref:site-granja]
       <details><summary>Funciona com sinal fraco no galpão?</summary><p>Funciona. Áudio e foto ficam no WhatsApp e chegam ao agente assim que o sinal volta.</p></details>
       <details><summary>Sou integrado. A ração da integradora vira custo?</summary><p>Não. O agente pergunta uma vez se você é integrado ou independente. No integrado, a ração e os remédios que vêm da integradora entram no lote, mas ficam fora dos custos. O que você compra por conta própria vira custo.</p></details>
       <details><summary>Preciso controlar custos?</summary><p>Não. Os custos são opcionais. Você liga quando quiser, mandando a foto de uma conta ou um texto como "paguei 1.240 de luz".</p></details>
+      <details><summary>O que o agente ainda não faz?</summary><p>Ainda não faço: preço do suíno, formulação de ração e diagnóstico de doença. Para isso, siga com o seu técnico e a sua integradora.</p></details>
       <details><summary>Quem vê os dados da minha granja?</summary><p>Só os números que você autorizar. Os dados são da granja, não são vendidos nem compartilhados, e o tratamento segue a <a href="/privacidade/">política de privacidade</a>.</p></details>
       <details><summary>Como cancelo?</summary><p>No teste não há cartão nem cobrança: se não quiser continuar, é só não assinar. Depois de assinar, basta não renovar. O anual não renova sozinho: avisamos 30 e 7 dias antes, e você decide se continua.</p></details>
     </div>
@@ -235,6 +242,6 @@ wa_topo: Quero testar a Granja Digital [ref:site-granja]
   <div class="wrap revela">
     <h2>Comece hoje o teste na sua granja</h2>
     <p class="lead">Chame o agente no WhatsApp, toque em Suínos e aloje o primeiro lote. São {{cfg:teste_dias}} dias grátis, sem cartão.</p>
-    <div class="acoes"><a class="btn btn-wa" href="{{wa:Quero testar a Granja Digital [ref:site-granja]}}" target="_blank" rel="noopener">{{wa_svg}}Começar o teste grátis</a></div>
+    <div class="acoes"><a class="btn btn-wa" href="{{wa_texto:Quero testar a Granja Digital [ref:site-granja]}}" target="_blank" rel="noopener">{{wa_svg}}Começar o teste grátis</a></div>
   </div>
 </section>
