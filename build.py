@@ -5,8 +5,11 @@ Uso:  python build.py
 Tudo que muda com frequência (WhatsApp, preços, domínio) está em CONFIG abaixo.
 Cada página em src/pages/*.html começa com um bloco de metadados entre linhas '---'.
 Marcadores aceitos no conteúdo:
-  {{wa:Mensagem pronta}}  -> link wa.me com a mensagem já preenchida e a origem [ref:...] da página
-  {{wa_texto:Mensagem}}   -> link wa.me do agente com a mensagem exatamente como escrita
+  {{wa:onde}}                 -> agente, "Oi [ref:<ref da página>-<onde>]"
+  {{wa_texto:onde|Mensagem}}  -> agente, "Mensagem [ref:<ref da página>-<onde>]"
+  {{wa_comercial:onde|Msg}}   -> número comercial (só /projetos/), "Msg [ref:<ref>-<onde>]"
+  (24/11: todo lead de leite, grãos e suínos vai para o agente, inclusive os diagnósticos;
+   o comercial fica só na privacidade e em /projetos/)
                              (se a mensagem já tiver [ref:...], vale a dela)
   {{icone:nome}}          -> ícone SVG em linha
   {{cfg:chave}}           -> valor de CONFIG
@@ -22,10 +25,11 @@ SRC, DIST = RAIZ / "src", RAIZ / "dist"
 
 CONFIG = {
     "dominio": "https://campodigital.com.br",
-    "whatsapp": "5548996373942",            # número comercial (só dígitos, com DDI)
-    "whatsapp_legivel": "(48) 99637-3942",   # comercial: fica só nos formulários de diagnóstico e na privacidade
-    "agente": "554891049665",               # 29/10: todos os botões do site abrem direto o agente
-    "agente_legivel": "(48) 9104-9665",
+    # Os dois únicos números do site (só dígitos, com DDI). Nenhuma página tem número fixo.
+    "whatsapp_agente": "554891049665",            # leads de leite, grãos e suínos, inclusive os diagnósticos
+    "whatsapp_agente_legivel": "(48) 9104-9665",
+    "whatsapp_comercial": "5548996373942",        # só privacidade (encarregado de dados) e /projetos/
+    "whatsapp_comercial_legivel": "(48) 99637-3942",
     "agente_texto": "Oi",                   # mensagem pronta dos botões (o agente reconhece a origem pelo [ref:...])
     "ref_padrao": "site-inicio",             # origem anexada às mensagens do WhatsApp; páginas trocam com "ref:" no topo
     # Planos (Termos de Uso e Assinatura versão 2026-10.2, aprovados pelo contador; vigentes em 16/10/2026)
@@ -105,12 +109,13 @@ def icone(nome):
     return f'<svg viewBox="0 0 24 24" aria-hidden="true">{ICONES[nome]}</svg>'
 
 
-def wa(msg, ref=None):
-    # 29/10: todo botão vai para o agente com "Oi"; a mensagem da página só serve para dar o [ref:...]
-    m = re.search(r"\[ref:([^\]]+)\]", msg)
-    origem = m.group(1) if m else (ref or CONFIG["ref_padrao"])
-    texto = f"{CONFIG['agente_texto']} [ref:{origem}]"
-    return f"https://wa.me/{CONFIG['agente']}?text=" + urllib.parse.quote(texto)
+def wa(onde, ref=None, texto=None, comercial=False):
+    """Link wa.me com o ref do botão no fim: [ref:<ref da página>-<onde>].
+    Agente por padrão (texto "Oi"); comercial só para /projetos/."""
+    origem = f"{ref or CONFIG['ref_padrao']}-{onde}"
+    numero = CONFIG["whatsapp_comercial" if comercial else "whatsapp_agente"]
+    msg = f"{texto or CONFIG['agente_texto']} [ref:{origem}]"
+    return f"https://wa.me/{numero}?text=" + urllib.parse.quote(msg)
 
 
 def brl(v, centavos=False):
@@ -123,10 +128,14 @@ def expandir(txt, ref=None):
     txt = re.sub(r"\{\{cfg:(\w+)\}\}", lambda m: str(CONFIG[m.group(1)]), txt)
     txt = re.sub(r"\{\{brl:(\w+)\}\}", lambda m: brl(CONFIG[m.group(1)]), txt)
     txt = re.sub(r"\{\{brl2:(\w+)\}\}", lambda m: brl(CONFIG[m.group(1)], centavos=True), txt)
-    # 23/11: {{wa_texto:...}} manda a mensagem exatamente como escrita (CTA da Granja)
-    txt = re.sub(r"\{\{wa_texto:(.+?)\}\}", lambda m: html.escape(
-        f"https://wa.me/{CONFIG['agente']}?text=" + urllib.parse.quote(m.group(1)), quote=True), txt)
-    txt = re.sub(r"\{\{wa:(.+?)\}\}", lambda m: html.escape(wa(m.group(1), ref), quote=True), txt)
+    txt = re.sub(r"\{\{wa_texto:([\w-]+)\|(.+?)\}\}",
+                 lambda m: html.escape(wa(m.group(1), ref, m.group(2)), quote=True), txt)
+    txt = re.sub(r"\{\{wa_comercial:([\w-]+)\|(.+?)\}\}",
+                 lambda m: html.escape(wa(m.group(1), ref, m.group(2), comercial=True), quote=True), txt)
+    txt = re.sub(r"\{\{wa:([\w-]+)\}\}", lambda m: html.escape(wa(m.group(1), ref), quote=True), txt)
+    resto = re.search(r"\{\{wa(?!_svg\}\})[^}]*\}\}", txt)
+    if resto:
+        raise SystemExit("marcador {{wa...}} fora do formato: " + resto.group(0))
     txt = re.sub(r"\{\{icone:(\w+)\}\}", lambda m: icone(m.group(1)), txt)
     txt = txt.replace("{{wa_svg}}", WA_SVG)
     return txt
@@ -153,7 +162,8 @@ def layout(meta, corpo):
     for href, rotulo, chave in NAV:
         cur = ' aria-current="page"' if chave == ativo else ""
         itens.append(f'<a href="{href}"{cur}>{rotulo}</a>')
-    msg_topo = meta.get("wa_topo", "Olá! Vim pelo site da Campo Digital e quero conhecer os agentes.")
+    comercial = meta.get("destino") == "comercial"
+    msg_topo = meta.get("wa_topo") if comercial else meta.get("wa_texto_topo")
     noindex = '<meta name="robots" content="noindex">' if meta.get("noindex") else ""
     jsonld = ""
     if caminho == "/":
@@ -163,12 +173,12 @@ def layout(meta, corpo):
             "logo": CONFIG["dominio"] + "/assets/img/campo-digital-512.png",
             "description": desc,
             "address": {"@type": "PostalAddress", "addressLocality": "Florianópolis", "addressRegion": "SC", "addressCountry": "BR"},
-            "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+" + CONFIG["whatsapp"], "availableLanguage": "Portuguese"},
+            "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "telephone": "+" + CONFIG["whatsapp_agente"], "availableLanguage": "Portuguese"},
         }, ensure_ascii=False) + "</script>"
     classe_body = f' class="{meta["classe_body"]}"' if meta.get("classe_body") else ""
     js_extra = "".join(f'\n<script src="{j.strip()}" defer></script>' for j in meta.get("js", "").split(",") if j.strip())
     flutuante = "" if meta.get("sem_flutuante") else (
-        f'<a class="wa-flutuante" href="{html.escape(wa(msg_topo, ref), quote=True)}" target="_blank" rel="noopener" '
+        f'<a class="wa-flutuante" href="{html.escape(wa("flutuante", ref, msg_topo, comercial), quote=True)}" target="_blank" rel="noopener" '
         f'aria-label="Falar no WhatsApp" style="color:#152B1C">{WA_SVG}</a>')
     return f"""<!doctype html>
 <html lang="pt-BR" class="sem-js">
@@ -204,7 +214,7 @@ def layout(meta, corpo):
     <button class="menu-botao" aria-expanded="false" aria-controls="menu">Menu</button>
     <nav class="menu" id="menu" aria-label="Principal">
       {''.join(itens)}
-      <a class="btn btn-wa btn-sm" href="{html.escape(wa(msg_topo, ref), quote=True)}" target="_blank" rel="noopener">{WA_SVG}Falar no WhatsApp</a>
+      <a class="btn btn-wa btn-sm" href="{html.escape(wa('topo', ref, msg_topo, comercial), quote=True)}" target="_blank" rel="noopener">{WA_SVG}Falar no WhatsApp</a>
     </nav>
   </div>
 </header>
@@ -239,7 +249,7 @@ def layout(meta, corpo):
         <ul>
           <li><a href="/#quem-somos">Quem somos</a></li>
           <li><a href="/#perguntas">Perguntas frequentes</a></li>
-          <li><a href="{html.escape(wa('Olá! Vim pelo site da Campo Digital.', ref), quote=True)}" target="_blank" rel="noopener">WhatsApp {CONFIG['agente_legivel']}</a></li>
+          <li><a href="{html.escape(wa('rodape', ref), quote=True)}" target="_blank" rel="noopener">WhatsApp {CONFIG['whatsapp_agente_legivel']}</a></li>
         </ul>
       </div>
       <div>

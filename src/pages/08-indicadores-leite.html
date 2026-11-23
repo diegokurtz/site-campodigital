@@ -3,7 +3,6 @@ caminho: /fazenda-digital/indicadores/
 prioridade: 0.6
 titulo: Quais números mandam na sua fazenda de leite? | Fazenda Digital
 descricao: Diagnóstico Fazenda Digital em 3 minutos: 12 indicadores, 1 toque cada, cerca de 3 minutos. Respostas enviadas pelo WhatsApp.
-wa_topo: Olá! Vim pela página de indicadores do Fazenda Digital.
 ref: site-leite
 sem_flutuante: sim
 classe_body: com-barra
@@ -35,7 +34,7 @@ js: /assets/js/indicadores.js
         <span class="rot">Toparia testar na sua fazenda por {{cfg:teste_dias}} dias?</span>
         <div class="chips" id="p-teste"></div>
       </div>
-      <p class="rodape-form">As respostas não ficam guardadas em nenhum servidor: elas vão como mensagem de WhatsApp. Se o WhatsApp não abrir, toque em <button class="copiar" type="button" id="copiar">copiar respostas</button> e envie para {{cfg:whatsapp_legivel}}.</p>
+      <p class="rodape-form">As respostas não ficam guardadas em nenhum servidor: elas vão como mensagem de WhatsApp. Se o WhatsApp não abrir, toque em <button class="copiar" type="button" id="copiar">copiar respostas</button> e envie para {{cfg:whatsapp_agente_legivel}}.</p>
     </div>
   </div>
 </section>
@@ -51,8 +50,8 @@ js: /assets/js/indicadores.js
 {
  "titulo": "Fazenda Digital · indicadores",
  "chave": "fazenda-validacao-3min",
- "whatsapp": "{{cfg:whatsapp}}",
- "ref": "site-leite",
+ "whatsapp": "{{cfg:whatsapp_agente}}",
+ "ref": "site-leite-diagnostico",
  "teste_dias": "{{cfg:teste_dias}}",
  "blocos": [
   {
